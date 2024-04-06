@@ -1,9 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:graduation_project/core/router/routes.dart';
-import 'package:graduation_project/features/presentation/categories_screen/view/screens/categories_screen.dart';
-import '../../../../../core/constants.dart';
 import '../../../home_layout/view_model/home_layout_cubit.dart';
 import '../../model/home_model.dart';
 import '../widgets/home_widget.dart';
@@ -69,7 +66,8 @@ class _HomeState extends State<Home> {
                     RichText(
                         text: TextSpan(
                       recognizer: TapGestureRecognizer()
-                        ..onTap = () => HomeLayoutCubit.get(context).changeIndex(1),
+                        ..onTap =
+                            () => HomeLayoutCubit.get(context).changeIndex(1),
                       text: 'See all',
                       style: TextStyle(
                         fontFamily: 'Lato-Regular.ttf',

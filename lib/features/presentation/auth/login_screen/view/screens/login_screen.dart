@@ -64,6 +64,8 @@ class _LogInState extends State<LogIn> {
                       //RegEx
                       if (email!.isEmpty) {
                         return 'Please enter an email!';
+                      } else {
+                        return null;
                       }
                     },
                     decoration: InputDecoration(
@@ -88,6 +90,8 @@ class _LogInState extends State<LogIn> {
                       //RegEx
                       if (password!.isEmpty) {
                         return 'Please enter a password!';
+                      } else {
+                        return null;
                       }
                     },
                     controller: passwordController,

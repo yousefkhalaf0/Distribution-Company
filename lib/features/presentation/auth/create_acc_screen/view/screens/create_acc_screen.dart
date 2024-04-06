@@ -48,8 +48,8 @@ class _CreateAccState extends State<CreateAcc> {
                 SizedBox(height: 16.h),
                 Text(
                   'First name',
-                  style:
-                      TextStyle(fontSize: 16.sp, fontFamily: 'Lato-Regular.ttf'),
+                  style: TextStyle(
+                      fontSize: 16.sp, fontFamily: 'Lato-Regular.ttf'),
                 ),
                 SizedBox(height: 8.h),
                 TextFormField(
@@ -58,6 +58,8 @@ class _CreateAccState extends State<CreateAcc> {
                     //RegEx
                     if (firstName!.isEmpty) {
                       return 'Please enter your first name!';
+                    } else {
+                      return null;
                     }
                   },
                   decoration: InputDecoration(
@@ -69,8 +71,8 @@ class _CreateAccState extends State<CreateAcc> {
                 SizedBox(height: 12.h),
                 Text(
                   'Last name',
-                  style:
-                      TextStyle(fontSize: 16.sp, fontFamily: 'Lato-Regular.ttf'),
+                  style: TextStyle(
+                      fontSize: 16.sp, fontFamily: 'Lato-Regular.ttf'),
                 ),
                 SizedBox(height: 8.h),
                 TextFormField(
@@ -79,6 +81,8 @@ class _CreateAccState extends State<CreateAcc> {
                     //RegEx
                     if (lastName!.isEmpty) {
                       return 'Please enter your last name!';
+                    } else {
+                      return null;
                     }
                   },
                   decoration: InputDecoration(
@@ -90,8 +94,8 @@ class _CreateAccState extends State<CreateAcc> {
                 SizedBox(height: 12.h),
                 Text(
                   'Phone',
-                  style:
-                      TextStyle(fontSize: 16.sp, fontFamily: 'Lato-Regular.ttf'),
+                  style: TextStyle(
+                      fontSize: 16.sp, fontFamily: 'Lato-Regular.ttf'),
                 ),
                 SizedBox(height: 8.h),
                 Row(
@@ -129,8 +133,9 @@ class _CreateAccState extends State<CreateAcc> {
                           //RegEx
                           if (phoneNum!.isEmpty) {
                             return 'Please enter your phone number!';
+                          } else {
+                            return null;
                           }
-                          else{return null;}
                         },
                         decoration: InputDecoration(
                           // errorStyle: const TextStyle(fontSize: 8),
@@ -144,8 +149,8 @@ class _CreateAccState extends State<CreateAcc> {
                 SizedBox(height: 12.h),
                 Text(
                   'Email',
-                  style:
-                      TextStyle(fontSize: 16.sp, fontFamily: 'Lato-Regular.ttf'),
+                  style: TextStyle(
+                      fontSize: 16.sp, fontFamily: 'Lato-Regular.ttf'),
                 ),
                 SizedBox(height: 8.h),
                 TextFormField(
@@ -154,6 +159,8 @@ class _CreateAccState extends State<CreateAcc> {
                     //RegEx
                     if (regEmail!.isEmpty) {
                       return 'Please enter your email!';
+                    } else {
+                      return null;
                     }
                   },
                   decoration: InputDecoration(
@@ -165,8 +172,8 @@ class _CreateAccState extends State<CreateAcc> {
                 SizedBox(height: 12.h),
                 Text(
                   'Password',
-                  style:
-                      TextStyle(fontSize: 16.sp, fontFamily: 'Lato-Regular.ttf'),
+                  style: TextStyle(
+                      fontSize: 16.sp, fontFamily: 'Lato-Regular.ttf'),
                 ),
                 SizedBox(height: 8.h),
                 TextFormField(
@@ -174,6 +181,8 @@ class _CreateAccState extends State<CreateAcc> {
                     //RegEx
                     if (passwordReg!.isEmpty) {
                       return 'Please enter a password!';
+                    } else {
+                      return null;
                     }
                   },
                   controller: regPasswordController,
@@ -202,8 +211,8 @@ class _CreateAccState extends State<CreateAcc> {
                 SizedBox(height: 12.h),
                 Text(
                   'Confirm Password',
-                  style:
-                      TextStyle(fontSize: 16.sp, fontFamily: 'Lato-Regular.ttf'),
+                  style: TextStyle(
+                      fontSize: 16.sp, fontFamily: 'Lato-Regular.ttf'),
                 ),
                 SizedBox(height: 8.h),
                 TextFormField(
@@ -211,6 +220,8 @@ class _CreateAccState extends State<CreateAcc> {
                     //RegEx
                     if (passwordRegConfig!.isEmpty) {
                       return 'Please enter a password!';
+                    } else {
+                      return null;
                     }
                   },
                   controller: regPasswordConfigController,
@@ -282,7 +293,7 @@ class _CreateAccState extends State<CreateAcc> {
                   ),
                   child: ElevatedButton(
                     onPressed: () {
-                      if (createAccFormKey.currentState!.validate() ) {
+                      if (createAccFormKey.currentState!.validate()) {
                         //RegExdsfdsf
                         Navigator.pushNamedAndRemoveUntil(context,
                             AppRoutes.homeLayoutScreenRoute, (route) => false);

@@ -1,6 +1,5 @@
-import 'package:bloc/bloc.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 part 'home_layout_state.dart';
 
 class HomeLayoutCubit extends Cubit<HomeLayoutState> {
@@ -12,7 +11,6 @@ class HomeLayoutCubit extends Cubit<HomeLayoutState> {
 
   void changeIndex(int selectedIndex) {
     index = selectedIndex;
-    print(index);
     emit(HomeLayoutChangeIndex());
   }
 }

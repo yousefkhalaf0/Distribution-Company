@@ -37,7 +37,9 @@ class Profile extends StatelessWidget {
                         fontSize: 24.sp, fontFamily: 'Lato-Bold.ttf')),
                 subtitle: Text('muhamedali2@gmail.com',
                     style: TextStyle(
-                        fontSize: 14.sp, fontFamily: 'Lato-Light.ttf',color: Colors.black)),
+                        fontSize: 14.sp,
+                        fontFamily: 'Lato-Light.ttf',
+                        color: Colors.black)),
                 trailing: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -47,9 +49,9 @@ class Profile extends StatelessWidget {
                     SizedBox(width: 4.w),
                     RichText(
                         text: TextSpan(
-                          // recognizer: TapGestureRecognizer()
-                          //   ..onTap = () => Navigator.pushNamed(
-                          //       context, AppRoutes.homeLayoutScreenRoute),
+                            // recognizer: TapGestureRecognizer()
+                            //   ..onTap = () => Navigator.pushNamed(
+                            //       context, AppRoutes.homeLayoutScreenRoute),
                             text: 'Edit',
                             style: TextStyle(
                               fontFamily: 'Lato-Regular.ttf',
@@ -76,17 +78,17 @@ class Profile extends StatelessWidget {
                           SizedBox(height: 24.h),
                       itemCount: ProfileModel.data.length,
                       itemBuilder: (context, index) => ProfileWidget(
-                        profileModel: ProfileModel.data[index],
-                      )),
+                            profileModel: ProfileModel.data[index],
+                          )),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(top: 16.h),
                 child: RichText(
                     text: TextSpan(
-                      // recognizer: TapGestureRecognizer()
-                      //   ..onTap = () => Navigator.pushNamed(
-                      //       context, AppRoutes.homeLayoutScreenRoute),
+                        // recognizer: TapGestureRecognizer()
+                        //   ..onTap = () => Navigator.pushNamed(
+                        //       context, AppRoutes.homeLayoutScreenRoute),
                         text: 'LOGOUT',
                         style: TextStyle(
                           fontFamily: 'Lato-Regular.ttf',

@@ -16,8 +16,7 @@ class ProfileWidget extends StatelessWidget {
         title: Text('${profileModel!.title}',
             style: TextStyle(fontSize: 14.sp, fontFamily: 'Lato-Light.ttf')),
         trailing: SizedBox(
-            height: 18.h,
-            child: Image.asset('assets/images/icons/img_18.png')),
+            height: 18.h, child: Image.asset('assets/images/icons/img_18.png')),
       ),
     );
   }
