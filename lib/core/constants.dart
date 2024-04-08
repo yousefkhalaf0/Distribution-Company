@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 
-//onboarding screen
-final onBoardingController = PageController();
-int currentPage = 0;
-
 //login screen
 final emailController = TextEditingController();
 final passwordController = TextEditingController();
 final loginFormKey = GlobalKey<FormState>();
-bool isPassword = false;
 
 //create acc screen
 final firstNameController = TextEditingController();
@@ -18,29 +13,24 @@ final regEmailController = TextEditingController();
 final regPasswordController = TextEditingController();
 final regPasswordConfigController = TextEditingController();
 final createAccFormKey = GlobalKey<FormState>();
-bool isPasswordReg = false;
-bool isPasswordRegConfig = false;
-bool isChecked = false;
 
 //forget by email screen
 final forgetByEmailController = TextEditingController();
+final forgetByEmailFormKey = GlobalKey<FormState>();
 
 //forget by phone screen
 final forgetByPhoneController = TextEditingController();
+final forgetByPhoneFormKey = GlobalKey<FormState>();
 
 //email otp screen
 final emailOTPController = TextEditingController();
+final emailOTPFormKey = GlobalKey<FormState>();
 
 //phone otp screen
 final phoneOTPController = TextEditingController();
+final phoneOTPFormKey = GlobalKey<FormState>();
 
 //create new pass screen
 final newPasswordController = TextEditingController();
 final newPasswordConfigController = TextEditingController();
-bool isNewPassword = false;
-bool isNewPasswordConfig = false;
-
-//home layout screen
-// int selectedIndex = 0;
-
-//categories screen
+final newPasswordFormKey = GlobalKey<FormState>();

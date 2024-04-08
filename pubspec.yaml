@@ -38,6 +38,7 @@ dependencies:
   shared_preferences: ^2.2.2
   bloc: ^8.1.4
   flutter_bloc: ^8.1.5
+  flutter_svg: ^2.0.10+1
   dio: ^5.4.2+1
   flutter_screenutil: ^5.9.0
   auth_buttons: ^3.0.2

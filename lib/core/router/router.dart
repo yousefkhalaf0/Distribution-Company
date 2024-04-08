@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/router/routes.dart';
-import '../../features/presentation/auth/create_acc_screen/view/screens/create_acc_screen.dart';
-import '../../features/presentation/auth/create_new_pass_screen/view/screens/create_new_pass_screen.dart';
-import '../../features/presentation/auth/email_otp_screen/view/screens/email_otp_screen.dart';
-import '../../features/presentation/auth/forget_by_email_screen/view/screens/forget_by_email_screen.dart';
-import '../../features/presentation/auth/forget_by_phone_screen/view/screens/forget_by_phone_screen.dart';
-import '../../features/presentation/auth/login_screen/view/screens/login_screen.dart';
-import '../../features/presentation/auth/phone_otp_screen/view/screens/phone_otp_screen.dart';
-import '../../features/presentation/cart_screen/view/screens/cart_screen.dart';
-import '../../features/presentation/categories_screen/view/screens/categories_screen.dart';
-import '../../features/presentation/help_screen/view/screens/help_screen.dart';
-import '../../features/presentation/home_screen/view/screens/home_screen.dart';
-import '../../features/presentation/home_layout/view/screens/home_layout_screen.dart';
-import '../../features/presentation/on_boarding_screen/view/screens/on_boarding_screen.dart';
-import '../../features/presentation/profile_screen/view/screens/profile_screen.dart';
-import '../../features/presentation/search_screen/view/screens/search_screen.dart';
-import '../../features/presentation/splash_screen/view/screens/splash_screen.dart';
+import '../../features/auth/create_acc_screen/view/screens/create_acc_screen.dart';
+import '../../features/auth/forgot_password/create_new_pass_screen/view/screens/create_new_pass_screen.dart';
+import '../../features/auth/forgot_password/email_otp_screen/view/screens/email_otp_screen.dart';
+import '../../features/auth/forgot_password/forget_by_email_screen/view/screens/forget_by_email_screen.dart';
+import '../../features/auth/forgot_password/forget_by_phone_screen/view/screens/forget_by_phone_screen.dart';
+import '../../features/auth/forgot_password/phone_otp_screen/view/screens/phone_otp_screen.dart';
+import '../../features/auth/login_screen/view/screens/login_screen.dart';
+import '../../features/cart_screen/view/screens/cart_screen.dart';
+import '../../features/categories_screen/view/screens/categories_screen.dart';
+import '../../features/help_screen/view/screens/help_screen.dart';
+import '../../features/home_layout/view/screens/home_layout_screen.dart';
+import '../../features/home_screen/view/screens/home_screen.dart';
+import '../../features/on_boarding_screen/view/screens/on_boarding_screen.dart';
+import '../../features/profile_screen/view/screens/profile_screen.dart';
+import '../../features/search_screen/view/screens/search_screen.dart';
+import '../../features/splash_screen/view/screens/splash_screen.dart';
 
 Route<dynamic>? onGenerateRoutes(RouteSettings routeSettings) {
   switch (routeSettings.name) {
