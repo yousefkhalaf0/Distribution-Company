@@ -1,6 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import '../../../../core/router/routes.dart';
 import '../../../home_layout/view_model/home_layout_cubit.dart';
 import '../../model/home_model.dart';
 import '../widgets/home_widget.dart';
@@ -19,7 +21,9 @@ class _HomeState extends State<Home> {
       child: Scaffold(
         appBar: AppBar(
           title: InkWell(
-            onTap: () {},
+            onTap: () {
+              HomeLayoutCubit.get(context).changeIndex(4);
+            },
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -37,9 +41,11 @@ class _HomeState extends State<Home> {
           ),
           actions: [
             IconButton(
-                onPressed: () {},
-                icon: Image.asset('assets/images/icons/img_1.png',
-                    height: 22, width: 26))
+                onPressed: () {
+                  Navigator.pushNamed(context, AppRoutes.wishListScreenRoute);
+                },
+                icon: SvgPicture.asset('assets/images/icons/heart.svg',
+                    height: 22.h, width: 26.w))
           ],
         ),
         body: SingleChildScrollView(
@@ -149,9 +155,9 @@ class _HomeState extends State<Home> {
                       FittedBox(
                         child: RichText(
                             text: TextSpan(
-                          // recognizer: TapGestureRecognizer()
-                          //   ..onTap = () => Navigator.pushNamed(
-                          //       context, AppRoutes.forgetByEmailScreenRoute),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () =>
+                                HomeLayoutCubit.get(context).changeIndex(1),
                           text: 'See all',
                           style: TextStyle(
                             fontFamily: 'Lato-Regular.ttf',
@@ -206,9 +212,9 @@ class _HomeState extends State<Home> {
                       FittedBox(
                         child: RichText(
                             text: TextSpan(
-                          // recognizer: TapGestureRecognizer()
-                          //   ..onTap = () => Navigator.pushNamed(
-                          //       context, AppRoutes.forgetByEmailScreenRoute),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () =>
+                                HomeLayoutCubit.get(context).changeIndex(1),
                           text: 'See all',
                           style: TextStyle(
                             fontFamily: 'Lato-Regular.ttf',
@@ -263,9 +269,9 @@ class _HomeState extends State<Home> {
                       FittedBox(
                         child: RichText(
                             text: TextSpan(
-                          // recognizer: TapGestureRecognizer()
-                          //   ..onTap = () => Navigator.pushNamed(
-                          //       context, AppRoutes.forgetByEmailScreenRoute),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () =>
+                                HomeLayoutCubit.get(context).changeIndex(1),
                           text: 'See all',
                           style: TextStyle(
                             fontFamily: 'Lato-Regular.ttf',
@@ -320,9 +326,9 @@ class _HomeState extends State<Home> {
                       FittedBox(
                         child: RichText(
                             text: TextSpan(
-                          // recognizer: TapGestureRecognizer()
-                          //   ..onTap = () => Navigator.pushNamed(
-                          //       context, AppRoutes.forgetByEmailScreenRoute),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () =>
+                                HomeLayoutCubit.get(context).changeIndex(1),
                           text: 'See all',
                           style: TextStyle(
                             fontFamily: 'Lato-Regular.ttf',

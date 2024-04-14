@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import '../../model/home_layout_model.dart';
 import '../../view_model/home_layout_cubit.dart';
 
@@ -60,8 +61,15 @@ class _HomeLayoutState extends State<HomeLayout> {
             child: screens[HomeLayoutCubit.get(context).index],
           ),
           bottomNavigationBar: SizedBox(
-            height: 66.h,
+            // height: 66.h,
             child: BottomNavigationBar(
+              type: BottomNavigationBarType.fixed,
+              selectedItemColor: const Color(0xff1C6E97),
+              unselectedItemColor: Colors.black,
+              selectedFontSize: 8.sp,
+              unselectedFontSize: 8.sp,
+              currentIndex: HomeLayoutCubit.get(context).index,
+              onTap: HomeLayoutCubit.get(context).changeIndex,
               items: <BottomNavigationBarItem>[
                 BottomNavigationBarItem(
                   icon: ColorFiltered(
@@ -70,8 +78,8 @@ class _HomeLayoutState extends State<HomeLayout> {
                               ? const Color(0xff1C6E97)
                               : Colors.black,
                           BlendMode.srcIn),
-                      child: Image.asset(
-                        'assets/images/icons/img_2.png',
+                      child: SvgPicture.asset(
+                        'assets/images/icons/home.svg',
                         width: 24.w,
                         height: 24.h,
                       )),
@@ -84,8 +92,8 @@ class _HomeLayoutState extends State<HomeLayout> {
                               ? const Color(0xff1C6E97)
                               : Colors.black,
                           BlendMode.srcIn),
-                      child: Image.asset(
-                        'assets/images/icons/img_3.png',
+                      child: SvgPicture.asset(
+                        'assets/images/icons/categories.svg',
                         width: 19.w,
                         height: 19.h,
                       )),
@@ -98,8 +106,8 @@ class _HomeLayoutState extends State<HomeLayout> {
                               ? const Color(0xff1C6E97)
                               : Colors.black,
                           BlendMode.srcIn),
-                      child: Image.asset(
-                        'assets/images/icons/img_4.png',
+                      child: SvgPicture.asset(
+                        'assets/images/icons/cart.svg',
                         width: 24.w,
                         height: 24.h,
                       )),
@@ -112,8 +120,8 @@ class _HomeLayoutState extends State<HomeLayout> {
                               ? const Color(0xff1C6E97)
                               : Colors.black,
                           BlendMode.srcIn),
-                      child: Image.asset(
-                        'assets/images/icons/img_5.png',
+                      child: SvgPicture.asset(
+                        'assets/images/icons/search.svg',
                         width: 24.w,
                         height: 24.h,
                       )),
@@ -126,21 +134,14 @@ class _HomeLayoutState extends State<HomeLayout> {
                               ? const Color(0xff1C6E97)
                               : Colors.black,
                           BlendMode.srcIn),
-                      child: Image.asset(
-                        'assets/images/icons/img_6.png',
+                      child: SvgPicture.asset(
+                        'assets/images/icons/profile.svg',
                         width: 24.w,
                         height: 24.h,
                       )),
                   label: 'Profile',
                 ),
               ],
-              type: BottomNavigationBarType.fixed,
-              selectedItemColor: const Color(0xff1C6E97),
-              unselectedItemColor: Colors.black,
-              selectedFontSize: 8.sp,
-              unselectedFontSize: 8.sp,
-              currentIndex: HomeLayoutCubit.get(context).index,
-              onTap: HomeLayoutCubit.get(context).changeIndex,
             ),
           ),
         );

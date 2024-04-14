@@ -10,6 +10,7 @@ import 'features/auth/create_acc_screen/view_model/create_acc_cubit.dart';
 import 'features/auth/forgot_password/create_new_pass_screen/view_model/create_new_pass_cubit.dart';
 import 'features/home_layout/view_model/home_layout_cubit.dart';
 import 'features/on_boarding_screen/view_model/on_boarding_cubit.dart';
+import 'features/profile/view_mode/profile_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -53,6 +54,9 @@ class MyApp extends StatelessWidget {
           ),
           BlocProvider(
             create: (context) => CreateNewPassCubit(),
+          ),
+          BlocProvider(
+            create: (context) => ProfileCubit(),
           ),
         ],
         child: MaterialApp(

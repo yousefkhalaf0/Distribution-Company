@@ -12,7 +12,7 @@ class OnBoardingCubit extends Cubit<OnBoardingState> {
   final onBoardingController = PageController();
   int currentPage = 0;
 
-  void ChangePageView(int index) {
+  void changePageView(int index) {
     currentPage = index;
     emit(ChangePageViewState());
   }

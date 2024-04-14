@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import '../../../home_layout/view_model/home_layout_cubit.dart';
 import '../../model/categories_model.dart';
 import '../widgets/categories_widget.dart';
@@ -57,7 +58,7 @@ class _CategoriesState extends State<Categories>
                           decoration: InputDecoration(
                             border: InputBorder.none,
                             prefixIcon: Image.asset(
-                                'assets/images/icons/img_5.png',
+                                'assets/images/icons/img_2.png',
                                 scale: 2),
                             hintText: 'Search',
                             hintStyle: TextStyle(
@@ -73,7 +74,8 @@ class _CategoriesState extends State<Categories>
                       icon: SizedBox(
                           width: 35.w,
                           height: 35.h,
-                          child: Image.asset('assets/images/icons/img_4.png')))
+                          child:
+                              SvgPicture.asset('assets/images/icons/cart.svg')))
                 ],
               ),
             ),

@@ -1,5 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/router/routes.dart';
 import '../../model/profile_model.dart';
 import '../widgets/profile_widget.dart';
 
@@ -49,9 +51,9 @@ class Profile extends StatelessWidget {
                     SizedBox(width: 4.w),
                     RichText(
                         text: TextSpan(
-                            // recognizer: TapGestureRecognizer()
-                            //   ..onTap = () => Navigator.pushNamed(
-                            //       context, AppRoutes.homeLayoutScreenRoute),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () => Navigator.pushNamed(
+                                  context, AppRoutes.editProfileScreenRoute),
                             text: 'Edit',
                             style: TextStyle(
                               fontFamily: 'Lato-Regular.ttf',
@@ -79,6 +81,7 @@ class Profile extends StatelessWidget {
                       itemCount: ProfileModel.data.length,
                       itemBuilder: (context, index) => ProfileWidget(
                             profileModel: ProfileModel.data[index],
+                            index: index,
                           )),
                 ),
               ),

@@ -62,7 +62,7 @@ class _OnBoardingState extends State<OnBoarding> {
                       ),
                       itemCount: OnBoardingModel.data.length,
                       onPageChanged: (int index) {
-                        cubit.ChangePageView(index);
+                        cubit.changePageView(index);
                       },
                       physics: const BouncingScrollPhysics(),
                     ),

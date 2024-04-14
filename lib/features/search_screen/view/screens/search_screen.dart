@@ -51,8 +51,9 @@ class Search extends StatelessWidget {
                             decoration: InputDecoration(
                               border: InputBorder.none,
                               prefixIcon: Image.asset(
-                                  'assets/images/icons/img_5.png',
-                                  scale: 2),
+                                  'assets/images/icons/img_2.png',
+                                scale: 2
+                              ),
                               hintText: 'Search',
                               hintStyle: TextStyle(
                                   fontSize: 16.sp,

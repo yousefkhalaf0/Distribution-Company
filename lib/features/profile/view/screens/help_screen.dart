@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+import '../../../../core/router/routes.dart';
+import '../../../home_layout/view_model/home_layout_cubit.dart';
 import '../../model/help_model.dart';
 import '../widgets/help_widget.dart';
 
@@ -13,8 +16,7 @@ class Help extends StatelessWidget {
         appBar: AppBar(
           leading: IconButton(
               onPressed: () {
-                // Navigator.pushNamedAndRemoveUntil(
-                //     context, AppRoutes., (route) => false);
+                Navigator.pushNamed(context, AppRoutes.editProfileScreenRoute);
               },
               icon: SizedBox(
                   height: 24.h,
@@ -26,20 +28,18 @@ class Help extends StatelessWidget {
           actions: [
             IconButton(
                 onPressed: () {
-                  // Navigator.pushNamedAndRemoveUntil(
-                  //     context, AppRoutes., (route) => false);
+                  HomeLayoutCubit.get(context).changeIndex(3);
                 },
                 icon: SizedBox(
                     height: 24.h,
-                    child: Image.asset('assets/images/icons/img_5.png'))),
+                    child: SvgPicture.asset('assets/images/icons/search.svg'))),
             IconButton(
                 onPressed: () {
-                  // Navigator.pushNamedAndRemoveUntil(
-                  //     context, AppRoutes., (route) => false);
+                  HomeLayoutCubit.get(context).changeIndex(2);
                 },
                 icon: SizedBox(
                     height: 24.h,
-                    child: Image.asset('assets/images/icons/img_4.png')))
+                    child: SvgPicture.asset('assets/images/icons/cart.svg')))
           ],
           elevation: 0,
           backgroundColor: Colors.transparent,
