@@ -11,6 +11,7 @@ import '../../features/auth/forgot_password/phone_otp_screen/view/screens/phone_
 import '../../features/auth/login_screen/view/screens/login_screen.dart';
 import '../../features/cart_screen/view/screens/cart_screen.dart';
 import '../../features/categories_screen/view/screens/categories_screen.dart';
+import '../../features/products_view_screen/view/screens/products_view_screen.dart';
 import '../../features/profile/view/screens/help_screen.dart';
 import '../../features/home_layout/view/screens/home_layout_screen.dart';
 import '../../features/home_screen/view/screens/home_screen.dart';
@@ -43,6 +44,9 @@ Route<dynamic>? onGenerateRoutes(RouteSettings routeSettings) {
       return MaterialPageRoute(builder: (_) => const Home());
     case AppRoutes.categoriesScreenRoute:
       return MaterialPageRoute(builder: (_) => const Categories());
+    case AppRoutes.productsViewScreenRoute:
+      // final String title = routeSettings.arguments as String;
+      return MaterialPageRoute(builder: (_) => const ProductsView(/*title: title*/));
     case AppRoutes.cartScreenRoute:
       return MaterialPageRoute(builder: (_) => const Cart());
     case AppRoutes.searchScreenRoute:

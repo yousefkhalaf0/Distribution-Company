@@ -3,9 +3,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../../../core/constants.dart';
 import '../../../../../../core/router/routes.dart';
-import '../../../../../core/utilities.dart';
+import '../../../../../core/utilities/constants.dart';
+import '../../../../../core/utilities/controllers.dart';
+import '../../../../../core/utilities/functions.dart';
 import '../../view_model/create_acc_cubit.dart';
 
 class CreateAcc extends StatefulWidget {

@@ -15,16 +15,16 @@ class WishList extends StatelessWidget {
         backgroundColor: Colors.transparent,
         leading: IconButton(
             onPressed: () {
-              // HomeLayoutCubit.get(context).changeIndex(0);
+              Navigator.pop(context);
             },
             icon: SizedBox(
                 height: 24.h,
                 child: Image.asset('assets/images/icons/img.png'))),
+        centerTitle: false,
         title: Text(
           'Wishlist',
           style: TextStyle(fontSize: 20.sp, fontFamily: 'Lato-Regular.ttf'),
         ),
-        centerTitle: false,
         actions: [
           Padding(
             padding: EdgeInsets.only(right: 16.w),

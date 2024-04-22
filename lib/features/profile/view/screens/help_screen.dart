@@ -21,6 +21,7 @@ class Help extends StatelessWidget {
               icon: SizedBox(
                   height: 24.h,
                   child: Image.asset('assets/images/icons/img.png'))),
+          centerTitle: false,
           title: Text(
             'Help',
             style: TextStyle(fontSize: 24.sp, fontFamily: 'Lato-Regular.ttf'),

@@ -20,6 +20,7 @@ class _HomeState extends State<Home> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          centerTitle: false,
           title: InkWell(
             onTap: () {
               HomeLayoutCubit.get(context).changeIndex(4);

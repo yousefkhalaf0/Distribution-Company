@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import '../../../../core/router/routes.dart';
 
 class Cart extends StatelessWidget {
@@ -23,11 +22,11 @@ class Cart extends StatelessWidget {
           //     icon: SizedBox(
           //         height: 24.h,
           //         child: Image.asset('assets/images/icons/img.png'))),
+          centerTitle: false,
           title: Text(
             'Cart',
             style: TextStyle(fontSize: 24.sp, fontFamily: 'Lato-Regular.ttf'),
           ),
-          centerTitle: false,
           actions: [
             Padding(
               padding: EdgeInsets.only(right: 16.w),
@@ -78,7 +77,7 @@ class Cart extends StatelessWidget {
                 ListView.separated(
                   shrinkWrap: true,
                   physics: const BouncingScrollPhysics(),
-                  separatorBuilder: (context, index) => SizedBox(height: 8.h),
+                  separatorBuilder: (context, index) => SizedBox(height: 12.h),
                   itemCount: 1,
                   itemBuilder: (context, index) => InkWell(
                     onTap: () {},

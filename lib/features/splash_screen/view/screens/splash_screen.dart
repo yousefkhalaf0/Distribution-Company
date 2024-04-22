@@ -1,7 +1,11 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:graduation_project/core/database/local_database/cache.dart';
+import 'package:graduation_project/core/utilities/enums.dart';
 import '../../../../../core/router/routes.dart';
+import '../../../../core/utilities/app_assets.dart';
+import '../../../../core/utilities/app_strings.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -14,11 +18,24 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 6), () {
+    Timer(const Duration(seconds: 3), () {
       Navigator.pushNamedAndRemoveUntil(
-          context, AppRoutes.onBoardingScreenRoute, (route) => false);
+          context,
+          MyShared.getBoolean(key: MySharedKeys.onBoarding)
+              ? AppRoutes.loginScreenRoute
+              : AppRoutes.onBoardingScreenRoute,
+          (route) => false);
     });
   }
+  //without shared preferences
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   Timer(const Duration(seconds: 6), () {
+  //     Navigator.pushNamedAndRemoveUntil(
+  //         context, AppRoutes.onBoardingScreenRoute, (route) => false);
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +55,7 @@ class _SplashState extends State<Splash> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Image.asset(
-              'assets/images/auth/img.png',
+              AppAssets.splashLogo,
             ),
             ShaderMask(
               blendMode: BlendMode.srcIn,
@@ -52,7 +69,7 @@ class _SplashState extends State<Splash> {
                   end: Alignment.bottomCenter,
                 ).createShader(bounds);
               },
-              child: Text('DISTRIBUTION',
+              child: Text(AppStrings.splashText1,
                   style: TextStyle(
                     fontSize: 32.sp,
                     fontWeight: FontWeight.bold,
@@ -72,7 +89,7 @@ class _SplashState extends State<Splash> {
                   end: Alignment.bottomCenter,
                 ).createShader(bounds);
               },
-              child: Text('Company',
+              child: Text(AppStrings.splashText2,
                   style: TextStyle(
                     fontSize: 20.sp,
                     fontWeight: FontWeight.bold,

@@ -10,6 +10,7 @@ class AppRoutes {
   static const String createNewPassScreenRoute = 'CreateNewPassScreen';
   static const String homeScreenRoute = 'HomeScreen';
   static const String categoriesScreenRoute = 'CategoriesScreen';
+  static const String productsViewScreenRoute = 'ProductsViewScreen';
   static const String cartScreenRoute = 'CartScreen';
   static const String searchScreenRoute = 'SearchScreen';
   static const String profileScreenRoute = 'ProfileScreen';

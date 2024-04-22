@@ -10,7 +10,7 @@ class LoginCubit extends Cubit<LoginState> {
 
   bool isPassword = false;
 
-  void ChangingObscure() {
+  void changingObscure() {
     isPassword = !isPassword;
     emit(ChangeLoginObscure());
   }

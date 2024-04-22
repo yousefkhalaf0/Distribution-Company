@@ -3,9 +3,12 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../../../core/constants.dart';
+import '../../../../../core/utilities/constants.dart';
 import '../../../../../../core/router/routes.dart';
-import '../../../../../core/utilities.dart';
+import '../../../../../core/utilities/controllers.dart';
+import '../../../../../core/database/local_database/cache.dart';
+import '../../../../../core/utilities/enums.dart';
+import '../../../../../core/utilities/functions.dart';
 import '../../view_model/login_cubit.dart';
 
 class LogIn extends StatefulWidget {
@@ -62,7 +65,7 @@ class _LogInState extends State<LogIn> {
                   ),
                   SizedBox(height: 8.h),
                   TextFormField(
-                    controller: emailController,
+                    controller: loginEmailController,
                     validator: (email) {
                       if (email == null || email.isEmpty) {
                         return 'Please enter your email';
@@ -93,6 +96,7 @@ class _LogInState extends State<LogIn> {
                   BlocBuilder<LoginCubit, LoginState>(
                     builder: (context, state) {
                       return TextFormField(
+                        controller: loginPasswordController,
                         validator: (password) {
                           if (password == null || password.isEmpty) {
                             return 'Please enter your password';
@@ -102,7 +106,6 @@ class _LogInState extends State<LogIn> {
                           }
                           return null;
                         },
-                        controller: passwordController,
                         obscureText:
                             LoginCubit.get(context).isPassword ? false : true,
                         decoration: InputDecoration(
@@ -111,7 +114,7 @@ class _LogInState extends State<LogIn> {
                                 fontSize: 10.sp, fontFamily: 'Lato-Light.ttf'),
                             suffixIcon: IconButton(
                                 onPressed: () {
-                                  LoginCubit.get(context).ChangingObscure();
+                                  LoginCubit.get(context).changingObscure();
                                 },
                                 icon: LoginCubit.get(context).isPassword
                                     ? const Icon(
@@ -171,6 +174,9 @@ class _LogInState extends State<LogIn> {
                     child: ElevatedButton(
                       onPressed: () {
                         if (loginFormKey.currentState!.validate()) {
+                          MyShared.putString(
+                              key: MySharedKeys.email,
+                              value: loginEmailController.text);
                           Navigator.pushNamedAndRemoveUntil(
                               context,
                               AppRoutes.homeLayoutScreenRoute,
@@ -249,30 +255,32 @@ class _LogInState extends State<LogIn> {
                           ),
                         ]),
                   ),
-                  SizedBox(height: 169.h),
-                  Center(
-                    child: RichText(
-                      text: TextSpan(
-                        text: "Don’t have any account? ",
-                        style: TextStyle(
-                          fontFamily: 'Lato-Regular.ttf',
-                          color: Colors.grey,
-                          fontSize: 16.sp,
-                        ),
-                        children: [
-                          TextSpan(
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () => Navigator.pushNamed(
-                                  context, AppRoutes.createAccScreenRoute),
-                            text: "Create Account",
-                            style: TextStyle(
-                              decoration: TextDecoration.underline,
-                              fontFamily: 'Lato-Regular.ttf',
-                              color: const Color(0xff1C6E97),
-                              fontSize: 16.sp,
-                            ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 169.h),
+                    child: Center(
+                      child: RichText(
+                        text: TextSpan(
+                          text: "Don’t have any account? ",
+                          style: TextStyle(
+                            fontFamily: 'Lato-Regular.ttf',
+                            color: Colors.grey,
+                            fontSize: 16.sp,
                           ),
-                        ],
+                          children: [
+                            TextSpan(
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () => Navigator.pushNamed(
+                                    context, AppRoutes.createAccScreenRoute),
+                              text: "Create Account",
+                              style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                fontFamily: 'Lato-Regular.ttf',
+                                color: const Color(0xff1C6E97),
+                                fontSize: 16.sp,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),

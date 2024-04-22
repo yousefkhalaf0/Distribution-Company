@@ -36,8 +36,11 @@ class _OnBoardingState extends State<OnBoarding> {
                 if (cubit.currentPage != OnBoardingModel.data.length - 1)
                   TextButton(
                       onPressed: () {
-                        Navigator.pushNamedAndRemoveUntil(context,
-                            AppRoutes.loginScreenRoute, (route) => false);
+                        // Navigator.pushNamedAndRemoveUntil(context,
+                        //     AppRoutes.loginScreenRoute, (route) => false);
+                        cubit.isLast = true;
+                        cubit.finishOnBoarding(
+                            context, AppRoutes.loginScreenRoute);
                       },
                       child: FittedBox(
                         child: Text(
@@ -138,8 +141,11 @@ class _OnBoardingState extends State<OnBoarding> {
                           ),
                           child: ElevatedButton(
                             onPressed: () {
-                              Navigator.pushNamedAndRemoveUntil(context,
-                                  AppRoutes.loginScreenRoute, (route) => false);
+                              // Navigator.pushNamedAndRemoveUntil(context,
+                              //     AppRoutes.loginScreenRoute, (route) => false);
+                              cubit.isLast = true;
+                              cubit.finishOnBoarding(
+                                  context, AppRoutes.loginScreenRoute);
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.transparent,

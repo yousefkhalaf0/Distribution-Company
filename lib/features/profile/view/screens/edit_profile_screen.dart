@@ -24,7 +24,8 @@ class _EditProfileState extends State<EditProfile> {
       appBar: AppBar(
         leading: IconButton(
             onPressed: () {
-              HomeLayoutCubit.get(context).changeIndex(4);
+              // HomeLayoutCubit.get(context).changeIndex(4);
+              // Navigator.pop(context);
             },
             icon: SizedBox(
                 height: 24.h,

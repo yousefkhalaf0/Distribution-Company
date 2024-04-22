@@ -6,3 +6,5 @@ sealed class OnBoardingState {}
 final class OnBoardingInitial extends OnBoardingState {}
 
 final class ChangePageViewState extends OnBoardingState {}
+
+final class FinishOnBoardingState extends OnBoardingState {}

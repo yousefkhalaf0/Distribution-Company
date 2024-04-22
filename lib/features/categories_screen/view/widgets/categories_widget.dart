@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:graduation_project/core/router/routes.dart';
 import '../../model/categories_model.dart';
 
 class CategoriesWidget extends StatelessWidget {
@@ -8,29 +9,23 @@ class CategoriesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        // // Navigate to the desired screen when tapped
-        // Navigator.pushNamed(context, DetailScreen(categoriesModel: categoriesModel));
-      },
-      child: FittedBox(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            SizedBox(
-              width: 87.w,
-              height: 87.h,
-              child: CircleAvatar(
-                backgroundColor: Colors.transparent,
-                child: Image.asset('${categoriesModel!.image}'),
-              ),
+    return FittedBox(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SizedBox(
+            width: 87.w,
+            height: 87.h,
+            child: CircleAvatar(
+              backgroundColor: Colors.transparent,
+              child: Image.asset('${categoriesModel!.image}'),
             ),
-            Text(
-              '${categoriesModel!.title}',
-              style: TextStyle(fontSize: 12.sp, fontFamily: 'Lato-Regular.ttf'),
-            )
-          ],
-        ),
+          ),
+          Text(
+            '${categoriesModel!.title}',
+            style: TextStyle(fontSize: 12.sp, fontFamily: 'Lato-Regular.ttf'),
+          )
+        ],
       ),
     );
   }
@@ -104,8 +99,14 @@ Widget generateGridViewWidget(List<CategoriesModel> items) {
       crossAxisSpacing: 16.w,
       mainAxisSpacing: 24.h,
     ),
-    itemBuilder: (context, index) => CategoriesWidget(
-      categoriesModel: items[index],
+    //wrap with gestureDetector
+    itemBuilder: (context, index) => GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, AppRoutes.productsViewScreenRoute);
+      },
+      child: CategoriesWidget(
+        categoriesModel: items[index],
+      ),
     ),
   );
 }

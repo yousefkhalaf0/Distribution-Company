@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/features/auth/login_screen/view_model/login_cubit.dart';
-import 'core/bloc_observer.dart';
+import 'core/utilities/bloc_observer.dart';
 import 'core/database/local_database/cache.dart';
 import 'core/router/router.dart';
 import 'features/auth/create_acc_screen/view_model/create_acc_cubit.dart';
 import 'features/auth/forgot_password/create_new_pass_screen/view_model/create_new_pass_cubit.dart';
 import 'features/home_layout/view_model/home_layout_cubit.dart';
 import 'features/on_boarding_screen/view_model/on_boarding_cubit.dart';
+import 'features/products_view_screen/view_model/products_view_cubit.dart';
 import 'features/profile/view_mode/profile_cubit.dart';
 
 void main() async {
@@ -17,14 +18,13 @@ void main() async {
   // Bloc.observer = MyBlocObserver();
   await MyShared.init();
   runApp(
-    //device preview
-    DevicePreview(
-      enabled: true,
-      builder: (context) => const MyApp(),
-    ),
+      //     //device preview
+      //     DevicePreview(
+      //   enabled: true,
+      //   builder: (context) => const MyApp(),
+      // ));
 
-    // const MyApp()
-  );
+      const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       //h total 926
-      //w 428
+      //w total 428
       designSize: const Size(428, 886),
       minTextAdapt: true,
       // splitScreenMode: true,
@@ -58,12 +58,15 @@ class MyApp extends StatelessWidget {
           BlocProvider(
             create: (context) => ProfileCubit(),
           ),
+          BlocProvider(
+            create: (context) => ProductsViewCubit(),
+          ),
         ],
-        child: MaterialApp(
-          //device preview
-          useInheritedMediaQuery: true,
-          locale: DevicePreview.locale(context),
-          builder: DevicePreview.appBuilder,
+        child: const MaterialApp(
+          // //device preview
+          // useInheritedMediaQuery: true,
+          // locale: DevicePreview.locale(context),
+          // builder: DevicePreview.appBuilder,
           debugShowCheckedModeBanner: false,
           onGenerateRoute: onGenerateRoutes,
           // home: const (),

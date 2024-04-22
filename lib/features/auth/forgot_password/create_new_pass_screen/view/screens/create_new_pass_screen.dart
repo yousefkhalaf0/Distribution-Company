@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../../../core/constants.dart';
 import '../../../../../../core/router/routes.dart';
-import '../../../../../../core/utilities.dart';
+import '../../../../../../core/utilities/constants.dart';
+import '../../../../../../core/utilities/controllers.dart';
+import '../../../../../../core/utilities/functions.dart';
 import '../../view_model/create_new_pass_cubit.dart';
 
 class CreateNewPass extends StatefulWidget {
@@ -20,7 +21,9 @@ class _CreateNewPassState extends State<CreateNewPass> {
       child: Scaffold(
         appBar: AppBar(
           leading: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
               icon: SizedBox(
                   height: 24.h,
                   child: Image.asset('assets/images/icons/img.png'))),

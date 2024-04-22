@@ -1,4 +1,4 @@
-import 'package:graduation_project/core/enums.dart';
+import 'package:graduation_project/core/utilities/enums.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MyShared {
