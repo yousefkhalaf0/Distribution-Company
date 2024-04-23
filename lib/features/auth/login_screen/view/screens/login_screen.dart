@@ -3,6 +3,9 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:graduation_project/core/utilities/app_assets.dart';
+import 'package:graduation_project/core/utilities/app_colors.dart';
+import 'package:graduation_project/core/utilities/app_strings.dart';
 import '../../../../../core/utilities/constants.dart';
 import '../../../../../../core/router/routes.dart';
 import '../../../../../core/utilities/controllers.dart';
@@ -36,61 +39,64 @@ class _LogInState extends State<LogIn> {
                     child: SizedBox(
                         // width: 428.w,
                         height: 177.h,
-                        child: const Image(
-                            image: AssetImage('assets/images/auth/img.png'))),
+                        child:
+                            const Image(image: AssetImage(AppAssets.appLogo))),
                   ),
                   Center(
                     child: Text(
-                      "Welcome to Discover",
+                      AppStrings.logInText1,
                       style: TextStyle(
-                          fontSize: 24.sp, fontFamily: 'Lato-Bold.ttf'),
+                          fontSize: 24.sp, fontFamily: AppStrings.fontLatoBold),
                     ),
                   ),
                   SizedBox(height: 6.h),
                   Center(
                       child: FittedBox(
                     child: Text(
-                      'Please choose your login option below',
+                      AppStrings.logInText2,
                       style: TextStyle(
                           color: Colors.grey,
                           fontSize: 16.sp,
-                          fontFamily: 'Lato-Light.ttf'),
+                          fontFamily: AppStrings.fontLatoLight),
                     ),
                   )),
                   SizedBox(height: 32.h),
                   Text(
-                    'Email',
+                    AppStrings.logInText3,
                     style: TextStyle(
-                        fontSize: 16.sp, fontFamily: 'Lato-Regular.ttf'),
+                        fontSize: 16.sp,
+                        fontFamily: AppStrings.fontLatoRegular),
                   ),
                   SizedBox(height: 8.h),
                   TextFormField(
                     controller: loginEmailController,
                     validator: (email) {
                       if (email == null || email.isEmpty) {
-                        return 'Please enter your email';
+                        return AppStrings.logInText4;
                       }
                       if (!isValidEmail(email)) {
-                        return 'Please enter a valid email';
+                        return AppStrings.logInText5;
                       }
                       return null;
                     },
                     decoration: InputDecoration(
                         errorStyle: TextStyle(
-                            fontSize: 10.sp, fontFamily: 'Lato-Light.ttf'),
+                            fontSize: 10.sp,
+                            fontFamily: AppStrings.fontLatoLight),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15.r)),
-                        hintText: 'Enter your email address',
+                        hintText: AppStrings.logInText6,
                         hintStyle: TextStyle(
                             fontSize: 12.sp,
                             color: Colors.grey,
-                            fontFamily: 'Lato-Light.ttf')),
+                            fontFamily: AppStrings.fontLatoLight)),
                   ),
                   SizedBox(height: 12.h),
                   Text(
-                    'Password',
+                    AppStrings.logInText7,
                     style: TextStyle(
-                        fontSize: 16.sp, fontFamily: 'Lato-Regular.ttf'),
+                        fontSize: 16.sp,
+                        fontFamily: AppStrings.fontLatoRegular),
                   ),
                   SizedBox(height: 8.h),
                   BlocBuilder<LoginCubit, LoginState>(
@@ -99,10 +105,10 @@ class _LogInState extends State<LogIn> {
                         controller: loginPasswordController,
                         validator: (password) {
                           if (password == null || password.isEmpty) {
-                            return 'Please enter your password';
+                            return AppStrings.logInText8;
                           }
                           if (!isValidPassword(password)) {
-                            return 'Password must be at least 8 characters long and contain at least one special character';
+                            return AppStrings.logInText9;
                           }
                           return null;
                         },
@@ -111,7 +117,8 @@ class _LogInState extends State<LogIn> {
                         decoration: InputDecoration(
                             errorMaxLines: 2,
                             errorStyle: TextStyle(
-                                fontSize: 10.sp, fontFamily: 'Lato-Light.ttf'),
+                                fontSize: 10.sp,
+                                fontFamily: AppStrings.fontLatoLight),
                             suffixIcon: IconButton(
                                 onPressed: () {
                                   LoginCubit.get(context).changingObscure();
@@ -119,19 +126,19 @@ class _LogInState extends State<LogIn> {
                                 icon: LoginCubit.get(context).isPassword
                                     ? const Icon(
                                         Icons.visibility,
-                                        color: Color(0xffFFA09D),
+                                        color: AppColors.customPink,
                                       )
                                     : const Icon(
                                         Icons.visibility_off,
-                                        color: Color(0xffFFA09D),
+                                        color: AppColors.customPink,
                                       )),
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15.r)),
-                            hintText: 'Enter your password',
+                            hintText: AppStrings.logInText10,
                             hintStyle: TextStyle(
                                 fontSize: 12.sp,
                                 color: Colors.grey,
-                                fontFamily: 'Lato-Light.ttf')),
+                                fontFamily: AppStrings.fontLatoLight)),
                       );
                     },
                   ),
@@ -144,11 +151,11 @@ class _LogInState extends State<LogIn> {
                         recognizer: TapGestureRecognizer()
                           ..onTap = () => Navigator.pushNamed(
                               context, AppRoutes.forgetByEmailScreenRoute),
-                        text: "Forget Password?",
+                        text: AppStrings.logInText11,
                         style: TextStyle(
                           decoration: TextDecoration.underline,
-                          fontFamily: 'Lato-Regular.ttf',
-                          color: const Color(0xffFFA09D),
+                          fontFamily: AppStrings.fontLatoRegular,
+                          color: AppColors.customPink,
                           fontSize: 14.sp,
                         ),
                       )),
@@ -162,9 +169,9 @@ class _LogInState extends State<LogIn> {
                     decoration: BoxDecoration(
                       gradient: const LinearGradient(
                         colors: [
-                          Color(0xff1C6E97),
-                          Color(0xff408AAF),
-                          Color(0xff1C6E97)
+                          AppColors.customDeepBlue,
+                          AppColors.customLightBlue,
+                          AppColors.customDeepBlue
                         ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
@@ -191,11 +198,11 @@ class _LogInState extends State<LogIn> {
                       ),
                       child: FittedBox(
                         child: Text(
-                          'Login',
+                          AppStrings.logInText12,
                           style: TextStyle(
                               fontSize: 24.sp,
-                              fontFamily: 'Lato',
-                              color: const Color(0xffFFFFFF)),
+                              fontFamily: AppStrings.fontLato,
+                              color: AppColors.customWhite),
                         ),
                       ),
                     ),
@@ -210,11 +217,11 @@ class _LogInState extends State<LogIn> {
                         color: Colors.grey,
                       ),
                       Text(
-                        'or login with',
+                        AppStrings.logInText13,
                         style: TextStyle(
                             color: Colors.grey,
                             fontSize: 12.sp,
-                            fontFamily: 'Lato-Light.ttf'),
+                            fontFamily: AppStrings.fontLatoLight),
                       ),
                       Container(
                         width: 120.w,
@@ -260,9 +267,9 @@ class _LogInState extends State<LogIn> {
                     child: Center(
                       child: RichText(
                         text: TextSpan(
-                          text: "Don’t have any account? ",
+                          text: AppStrings.logInText14,
                           style: TextStyle(
-                            fontFamily: 'Lato-Regular.ttf',
+                            fontFamily: AppStrings.fontLatoRegular,
                             color: Colors.grey,
                             fontSize: 16.sp,
                           ),
@@ -271,11 +278,11 @@ class _LogInState extends State<LogIn> {
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () => Navigator.pushNamed(
                                     context, AppRoutes.createAccScreenRoute),
-                              text: "Create Account",
+                              text: AppStrings.logInText15,
                               style: TextStyle(
                                 decoration: TextDecoration.underline,
-                                fontFamily: 'Lato-Regular.ttf',
-                                color: const Color(0xff1C6E97),
+                                fontFamily: AppStrings.fontLatoRegular,
+                                color: AppColors.customDeepBlue,
                                 fontSize: 16.sp,
                               ),
                             ),

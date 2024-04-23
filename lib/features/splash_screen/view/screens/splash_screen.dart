@@ -5,6 +5,7 @@ import 'package:graduation_project/core/database/local_database/cache.dart';
 import 'package:graduation_project/core/utilities/enums.dart';
 import '../../../../../core/router/routes.dart';
 import '../../../../core/utilities/app_assets.dart';
+import '../../../../core/utilities/app_colors.dart';
 import '../../../../core/utilities/app_strings.dart';
 
 class Splash extends StatefulWidget {
@@ -46,24 +47,24 @@ class _SplashState extends State<Splash> {
         height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration(
             gradient: SweepGradient(colors: [
-          Color(0xff1C6E97),
-          Color(0xff408AAF),
-          Color(0xff1C6E97)
+          AppColors.customDeepBlue,
+          AppColors.customLightBlue,
+          AppColors.customDeepBlue
         ])),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
             Image.asset(
-              AppAssets.splashLogo,
+              AppAssets.appLogo,
             ),
             ShaderMask(
               blendMode: BlendMode.srcIn,
               shaderCallback: (Rect bounds) {
                 return const LinearGradient(
                   colors: [
-                    Color(0xffFFFFFF),
-                    Color(0xffFFA09D)
+                    AppColors.customWhite,
+                    AppColors.customPink
                   ], // Customize gradient colors
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -73,7 +74,7 @@ class _SplashState extends State<Splash> {
                   style: TextStyle(
                     fontSize: 32.sp,
                     fontWeight: FontWeight.bold,
-                    fontFamily: 'Lato-Bold.ttf',
+                    fontFamily: AppStrings.fontLatoBold,
                   )),
             ),
             SizedBox(height: 4.h),
@@ -82,8 +83,8 @@ class _SplashState extends State<Splash> {
               shaderCallback: (Rect bounds) {
                 return const LinearGradient(
                   colors: [
-                    Color(0xffFFFFFF),
-                    Color(0xffFFA09D)
+                    AppColors.customWhite,
+                    AppColors.customPink
                   ], // Customize gradient colors
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -93,7 +94,7 @@ class _SplashState extends State<Splash> {
                   style: TextStyle(
                     fontSize: 20.sp,
                     fontWeight: FontWeight.bold,
-                    fontFamily: 'Lato-Bold.ttf',
+                    fontFamily: AppStrings.fontLatoBold,
                   )),
             )
           ],

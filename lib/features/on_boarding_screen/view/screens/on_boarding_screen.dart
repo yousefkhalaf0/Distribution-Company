@@ -3,6 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../../../../core/router/routes.dart';
+import '../../../../core/utilities/app_assets.dart';
+import '../../../../core/utilities/app_colors.dart';
+import '../../../../core/utilities/app_strings.dart';
 import '../../model/on_boarding_model.dart';
 import '../../view_model/on_boarding_cubit.dart';
 import '../widgets/on_boarding_widget.dart';
@@ -31,7 +34,7 @@ class _OnBoardingState extends State<OnBoarding> {
           return Scaffold(
             appBar: AppBar(
               // leadingWidth: 80.w,
-              leading: Image.asset('assets/images/auth/img.png'),
+              leading: Image.asset(AppAssets.appLogo),
               actions: [
                 if (cubit.currentPage != OnBoardingModel.data.length - 1)
                   TextButton(
@@ -44,10 +47,10 @@ class _OnBoardingState extends State<OnBoarding> {
                       },
                       child: FittedBox(
                         child: Text(
-                          'Skip',
+                          AppStrings.onBoardingText1,
                           style: TextStyle(
                               fontSize: 16.sp,
-                              fontFamily: 'Lato-Regular.ttf',
+                              fontFamily: AppStrings.fontLatoRegular,
                               color: Colors.black87),
                         ),
                       )),
@@ -80,8 +83,8 @@ class _OnBoardingState extends State<OnBoarding> {
                         radius: 30,
                         dotWidth: 20,
                         dotHeight: 9,
-                        dotColor: Color(0xff1C6E97),
-                        activeDotColor: Color(0xffFFA09D)),
+                        dotColor: AppColors.customDeepBlue,
+                        activeDotColor: AppColors.customPink),
                   ),
                   SizedBox(height: 70.h),
                   cubit.currentPage != OnBoardingModel.data.length - 1
@@ -91,9 +94,9 @@ class _OnBoardingState extends State<OnBoarding> {
                           decoration: BoxDecoration(
                             gradient: const LinearGradient(
                               colors: [
-                                Color(0xff1C6E97),
-                                Color(0xff408AAF),
-                                Color(0xff1C6E97)
+                                AppColors.customDeepBlue,
+                                AppColors.customLightBlue,
+                                AppColors.customDeepBlue
                               ],
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight,
@@ -115,11 +118,11 @@ class _OnBoardingState extends State<OnBoarding> {
                             ),
                             child: FittedBox(
                               child: Text(
-                                'next',
+                                AppStrings.onBoardingText2,
                                 style: TextStyle(
                                     fontSize: 24.sp,
-                                    fontFamily: 'Lato',
-                                    color: const Color(0xffFFFFFF)),
+                                    fontFamily: AppStrings.fontLato,
+                                    color: AppColors.customWhite),
                               ),
                             ),
                           ),
@@ -130,9 +133,9 @@ class _OnBoardingState extends State<OnBoarding> {
                           decoration: BoxDecoration(
                             gradient: const LinearGradient(
                               colors: [
-                                Color(0xff1C6E97),
-                                Color(0xff408AAF),
-                                Color(0xff1C6E97)
+                                AppColors.customDeepBlue,
+                                AppColors.customLightBlue,
+                                AppColors.customDeepBlue
                               ],
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight,
@@ -155,11 +158,11 @@ class _OnBoardingState extends State<OnBoarding> {
                             ),
                             child: FittedBox(
                               child: Text(
-                                'Get started',
+                                AppStrings.onBoardingText3,
                                 style: TextStyle(
                                     fontSize: 24.sp,
-                                    fontFamily: 'Lato',
-                                    color: const Color(0xffFFFFFF)),
+                                    fontFamily: AppStrings.fontLato,
+                                    color: AppColors.customWhite),
                               ),
                             ),
                           ),

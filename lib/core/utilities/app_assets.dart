@@ -1,3 +1,3 @@
-class AppAssets{
-  static const String splashLogo = 'assets/images/auth/img.png';
+class AppAssets {
+  static const String appLogo = 'assets/images/auth/img.png';
 }
