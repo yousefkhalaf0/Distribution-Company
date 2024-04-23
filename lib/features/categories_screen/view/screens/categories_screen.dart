@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import '../../../../core/utilities/controllers.dart';
 import '../../../home_layout/view_model/home_layout_cubit.dart';
+import '../../../home_screen/view_model/home_screen_cubit.dart';
 import '../../model/categories_model.dart';
 import '../widgets/categories_widget.dart';
 
 class Categories extends StatefulWidget {
-  const Categories({super.key});
+  const Categories({super.key, this.index});
+  final int? index;
 
   @override
   State<Categories> createState() => _CategoriesState();
@@ -14,12 +17,11 @@ class Categories extends StatefulWidget {
 
 class _CategoriesState extends State<Categories>
     with SingleTickerProviderStateMixin {
-  late TabController tabController;
-
   @override
   void initState() {
     super.initState();
     tabController = TabController(length: 7, vsync: this);
+    tabController.animateTo(HomeScreenCubit.get(context).endIndex);
   }
 
   @override
@@ -94,13 +96,13 @@ class _CategoriesState extends State<Categories>
                     child: TabBarView(
                       controller: tabController,
                       children: [
-                        generateGridViewWidget(CategoriesModel.office),
                         generateGridViewWidget(CategoriesModel.school),
+                        generateGridViewWidget(CategoriesModel.office),
                         generateGridViewWidget(CategoriesModel.papers),
-                        generateGridViewWidget(CategoriesModel.pen),
-                        generateGridViewWidget(CategoriesModel.measuring),
-                        generateGridViewWidget(CategoriesModel.toysGifts),
                         generateGridViewWidget(CategoriesModel.colorsArt),
+                        generateGridViewWidget(CategoriesModel.pen),
+                        generateGridViewWidget(CategoriesModel.toysGifts),
+                        generateGridViewWidget(CategoriesModel.measuring),
                       ],
                     ),
                   ),

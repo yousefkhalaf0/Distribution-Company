@@ -16,3 +16,4 @@ var emailOTPController = TextEditingController();
 var phoneOTPController = TextEditingController();
 var newPasswordController = TextEditingController();
 var newPasswordConfigController = TextEditingController();
+late TabController tabController;

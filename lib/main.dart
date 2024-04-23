@@ -9,6 +9,7 @@ import 'core/router/router.dart';
 import 'features/auth/create_acc_screen/view_model/create_acc_cubit.dart';
 import 'features/auth/forgot_password/create_new_pass_screen/view_model/create_new_pass_cubit.dart';
 import 'features/home_layout/view_model/home_layout_cubit.dart';
+import 'features/home_screen/view_model/home_screen_cubit.dart';
 import 'features/on_boarding_screen/view_model/on_boarding_cubit.dart';
 import 'features/products_view_screen/view_model/products_view_cubit.dart';
 import 'features/profile/view_mode/profile_cubit.dart';
@@ -18,13 +19,13 @@ void main() async {
   // Bloc.observer = MyBlocObserver();
   await MyShared.init();
   runApp(
-      //     //device preview
-      //     DevicePreview(
-      //   enabled: true,
-      //   builder: (context) => const MyApp(),
-      // ));
+  //     //device preview
+  //     DevicePreview(
+  //   enabled: true,
+  //   builder: (context) => const MyApp(),
+  // ));
 
-      const MyApp());
+  const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -60,6 +61,9 @@ class MyApp extends StatelessWidget {
           ),
           BlocProvider(
             create: (context) => ProductsViewCubit(),
+          ),
+          BlocProvider(
+            create: (context) => HomeScreenCubit(),
           ),
         ],
         child: const MaterialApp(

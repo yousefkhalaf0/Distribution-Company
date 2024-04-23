@@ -5,34 +5,13 @@ class HomeCategoriesModel {
   HomeCategoriesModel({this.image, this.title});
 
   static List<HomeCategoriesModel> data = [
-    HomeCategoriesModel(
-      image: 'assets/images/home/img_2.png',
-      title: 'School Supplies',
-    ),
-    HomeCategoriesModel(
-      image: 'assets/images/home/img_3.png',
-      title: 'Office Supplies',
-    ),
-    HomeCategoriesModel(
-      image: 'assets/images/home/img_4.png',
-      title: 'Papers',
-    ),
-    HomeCategoriesModel(
-      image: 'assets/images/home/img_5.png',
-      title: 'Colors & Art',
-    ),
-    HomeCategoriesModel(
-      image: 'assets/images/home/img_6.png',
-      title: 'Pen',
-    ),
-    HomeCategoriesModel(
-      image: 'assets/images/home/img_7.png',
-      title: 'Toys & Gifts',
-    ),
-    HomeCategoriesModel(
-      image: 'assets/images/home/img_8.png',
-      title: 'Measuring',
-    ),
+    HomeCategoriesModel(image: 'assets/images/home/img_2.png', title: 'School'),
+    HomeCategoriesModel(image: 'assets/images/home/img_3.png', title: 'Office'),
+    HomeCategoriesModel(image: 'assets/images/home/img_4.png', title: 'Papers'),
+    HomeCategoriesModel(image: 'assets/images/home/img_5.png', title: 'Colors & Art'),
+    HomeCategoriesModel(image: 'assets/images/home/img_6.png', title: 'Pen'),
+    HomeCategoriesModel(image: 'assets/images/home/img_7.png', title: 'Toys & Gifts'),
+    HomeCategoriesModel(image: 'assets/images/home/img_8.png', title: 'Measuring'),
   ];
 }
 

@@ -8,27 +8,23 @@ class HomeCategoriesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {},
-      child: Center(
-        child: FittedBox(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SizedBox(
-                width: 87.w,
-                height: 87.h,
-                child: CircleAvatar(
-                  child: Image.asset('${homeCategoriesModel!.image}'),
-                ),
+    return Center(
+      child: FittedBox(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SizedBox(
+              width: 87.w,
+              height: 87.h,
+              child: CircleAvatar(
+                child: Image.asset('${homeCategoriesModel!.image}'),
               ),
-              Text(
-                '${homeCategoriesModel!.title}',
-                style:
-                    TextStyle(fontSize: 12.sp, fontFamily: 'Lato-Regular.ttf'),
-              )
-            ],
-          ),
+            ),
+            Text(
+              '${homeCategoriesModel!.title}',
+              style: TextStyle(fontSize: 12.sp, fontFamily: 'Lato-Regular.ttf'),
+            )
+          ],
         ),
       ),
     );

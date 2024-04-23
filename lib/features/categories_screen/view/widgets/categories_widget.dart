@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/core/router/routes.dart';
+import '../../../home_screen/model/home_model.dart';
 import '../../model/categories_model.dart';
 
 class CategoriesWidget extends StatelessWidget {
@@ -33,7 +34,6 @@ class CategoriesWidget extends StatelessWidget {
 
 class RotatedTabBarWidget extends StatelessWidget {
   final TabController tabController;
-
   const RotatedTabBarWidget({super.key, required this.tabController});
 
   @override
@@ -58,15 +58,9 @@ class RotatedTabBarWidget extends StatelessWidget {
                 fontSize: 15.sp,
                 fontFamily: 'Lato-Regular.ttf',
               ),
-              tabs: const [
-                RotatedTabWidget(text: 'Office'),
-                RotatedTabWidget(text: 'School'),
-                RotatedTabWidget(text: 'Papers'),
-                RotatedTabWidget(text: 'Pen'),
-                RotatedTabWidget(text: 'Measuring'),
-                RotatedTabWidget(text: 'Toys & Gifts'),
-                RotatedTabWidget(text: 'Colors & Art'),
-              ],
+              tabs: HomeCategoriesModel.data.map((category) {
+                return RotatedTabWidget(title: category.title!);
+              }).toList(),
             ),
           ),
         ),
@@ -76,15 +70,15 @@ class RotatedTabBarWidget extends StatelessWidget {
 }
 
 class RotatedTabWidget extends StatelessWidget {
-  final String text;
+  final String title;
 
-  const RotatedTabWidget({super.key, required this.text});
+  const RotatedTabWidget({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
     return RotatedBox(
       quarterTurns: 3,
-      child: Tab(text: text),
+      child: Tab(text: title),
     );
   }
 }
@@ -99,10 +93,10 @@ Widget generateGridViewWidget(List<CategoriesModel> items) {
       crossAxisSpacing: 16.w,
       mainAxisSpacing: 24.h,
     ),
-    //wrap with gestureDetector
     itemBuilder: (context, index) => GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, AppRoutes.productsViewScreenRoute);
+        Navigator.pushNamed(context, AppRoutes.productsViewScreenRoute,
+            arguments: items[index]);
       },
       child: CategoriesWidget(
         categoriesModel: items[index],

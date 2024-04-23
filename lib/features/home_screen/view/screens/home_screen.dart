@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../core/router/routes.dart';
 import '../../../home_layout/view_model/home_layout_cubit.dart';
 import '../../model/home_model.dart';
+import '../../view_model/home_screen_cubit.dart';
 import '../widgets/home_widget.dart';
 
 class Home extends StatefulWidget {
@@ -73,8 +74,10 @@ class _HomeState extends State<Home> {
                     RichText(
                         text: TextSpan(
                       recognizer: TapGestureRecognizer()
-                        ..onTap =
-                            () => HomeLayoutCubit.get(context).changeIndex(1),
+                        ..onTap = () {
+                          HomeLayoutCubit.get(context).changeIndex(1);
+                          HomeScreenCubit.get(context).changeCategoryIndex(0);
+                        },
                       text: 'See all',
                       style: TextStyle(
                         fontFamily: 'Lato-Regular.ttf',
@@ -97,8 +100,14 @@ class _HomeState extends State<Home> {
                     crossAxisSpacing: 16.w,
                     mainAxisSpacing: 24.h,
                   ),
-                  itemBuilder: (context, index) => HomeCategoriesWidget(
-                      homeCategoriesModel: HomeCategoriesModel.data[index]),
+                  itemBuilder: (context, index) => InkWell(
+                    onTap: () {
+                      HomeLayoutCubit.get(context).changeIndex(1);
+                      HomeScreenCubit.get(context).changeCategoryIndex(index);
+                    },
+                    child: HomeCategoriesWidget(
+                        homeCategoriesModel: HomeCategoriesModel.data[index]),
+                  ),
                 ),
               ),
               SizedBox(height: 24.h),
@@ -157,8 +166,11 @@ class _HomeState extends State<Home> {
                         child: RichText(
                             text: TextSpan(
                           recognizer: TapGestureRecognizer()
-                            ..onTap = () =>
-                                HomeLayoutCubit.get(context).changeIndex(1),
+                            ..onTap = () {
+                              HomeLayoutCubit.get(context).changeIndex(1);
+                              HomeScreenCubit.get(context)
+                                  .changeCategoryIndex(1);
+                            },
                           text: 'See all',
                           style: TextStyle(
                             fontFamily: 'Lato-Regular.ttf',
@@ -214,8 +226,11 @@ class _HomeState extends State<Home> {
                         child: RichText(
                             text: TextSpan(
                           recognizer: TapGestureRecognizer()
-                            ..onTap = () =>
-                                HomeLayoutCubit.get(context).changeIndex(1),
+                            ..onTap = () {
+                              HomeLayoutCubit.get(context).changeIndex(1);
+                              HomeScreenCubit.get(context)
+                                  .changeCategoryIndex(0);
+                            },
                           text: 'See all',
                           style: TextStyle(
                             fontFamily: 'Lato-Regular.ttf',
@@ -271,8 +286,11 @@ class _HomeState extends State<Home> {
                         child: RichText(
                             text: TextSpan(
                           recognizer: TapGestureRecognizer()
-                            ..onTap = () =>
-                                HomeLayoutCubit.get(context).changeIndex(1),
+                            ..onTap = () {
+                              HomeLayoutCubit.get(context).changeIndex(1);
+                              HomeScreenCubit.get(context)
+                                  .changeCategoryIndex(2);
+                            },
                           text: 'See all',
                           style: TextStyle(
                             fontFamily: 'Lato-Regular.ttf',
@@ -328,8 +346,11 @@ class _HomeState extends State<Home> {
                         child: RichText(
                             text: TextSpan(
                           recognizer: TapGestureRecognizer()
-                            ..onTap = () =>
-                                HomeLayoutCubit.get(context).changeIndex(1),
+                            ..onTap = () {
+                              HomeLayoutCubit.get(context).changeIndex(1);
+                              HomeScreenCubit.get(context)
+                                  .changeCategoryIndex(4);
+                            },
                           text: 'See all',
                           style: TextStyle(
                             fontFamily: 'Lato-Regular.ttf',

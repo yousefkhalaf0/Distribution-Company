@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../../../categories_screen/model/categories_model.dart';
 import '../../../home_layout/view_model/home_layout_cubit.dart';
 import '../../../home_screen/model/home_model.dart';
 import '../../view_model/products_view_cubit.dart';
 import '../widgets/products_view_styles_widget.dart';
 
 class ProductsView extends StatefulWidget {
-  // final String title;
+  final CategoriesModel categoriesModel;
 
-  const ProductsView({super.key /*, required this.title*/});
+  const ProductsView({super.key, required this.categoriesModel});
 
   @override
   State<ProductsView> createState() => _ProductsViewState();
@@ -34,17 +35,19 @@ class _ProductsViewState extends State<ProductsView> {
                         'assets/images/icons/left_arrow.svg'))),
             centerTitle: false,
             title: Text(
-              'Sticky Notes',
+              '${widget.categoriesModel.title}',
               style: TextStyle(fontSize: 20.sp, fontFamily: 'Lato-Regular.ttf'),
             ),
             actions: [
               IconButton(
                   onPressed: () {
+                    Navigator.pop(context);
                     HomeLayoutCubit.get(context).changeIndex(3);
                   },
                   icon: SvgPicture.asset('assets/images/icons/search.svg')),
               IconButton(
                   onPressed: () {
+                    Navigator.pop(context);
                     HomeLayoutCubit.get(context).changeIndex(2);
                   },
                   icon: SvgPicture.asset('assets/images/icons/cart.svg')),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../../core/router/routes.dart';
 import '../../../home_layout/view_model/home_layout_cubit.dart';
 import '../../model/help_model.dart';
 import '../widgets/help_widget.dart';
@@ -16,7 +15,7 @@ class Help extends StatelessWidget {
         appBar: AppBar(
           leading: IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, AppRoutes.editProfileScreenRoute);
+                Navigator.pop(context);
               },
               icon: SizedBox(
                   height: 24.h,
