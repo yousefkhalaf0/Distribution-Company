@@ -18,4 +18,5 @@ class AppRoutes {
   static const String helpScreenRoute = 'HelpScreen';
   static const String editProfileScreenRoute = 'EditProfileScreen';
   static const String wishListScreenRoute = 'WishListScreen';
+  static const String inboxScreenRoute = 'InboxScreen';
 }

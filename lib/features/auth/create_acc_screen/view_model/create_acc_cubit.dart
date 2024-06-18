@@ -12,17 +12,17 @@ class CreateAccCubit extends Cubit<CreateAccState> {
   bool isPasswordRegConfig = false;
   bool isChecked = false;
 
-  void ChangingObscureReg() {
+  void changingObscureReg() {
     isPasswordReg = !isPasswordReg;
     emit(ChangeCreateAccRegObscure());
   }
 
-  void ChangingObscureRegConfig() {
+  void changingObscureRegConfig() {
     isPasswordRegConfig = !isPasswordRegConfig;
     emit(ChangeCreateAccRegConfigObscure());
   }
 
-  void CheckBoxChecked(bool value) {
+  void checkBoxChecked(bool value) {
     isChecked = value;
     emit(CheckBoxCheckedState());
   }

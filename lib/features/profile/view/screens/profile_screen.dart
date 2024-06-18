@@ -1,7 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:graduation_project/core/database/local_database/cache.dart';
+import 'package:graduation_project/core/utilities/enums.dart';
 import '../../../../core/router/routes.dart';
+import '../../../../core/utilities/controllers.dart';
 import '../../model/profile_model.dart';
 import '../widgets/profile_widget.dart';
 
@@ -38,7 +41,7 @@ class Profile extends StatelessWidget {
                 title: Text('Hello',
                     style: TextStyle(
                         fontSize: 24.sp, fontFamily: 'Lato-Bold.ttf')),
-                subtitle: Text('muhamedali2@gmail.com',
+                subtitle: Text(MyShared.getString(key: MySharedKeys.email),
                     style: TextStyle(
                         fontSize: 14.sp,
                         fontFamily: 'Lato-Light.ttf',
@@ -87,19 +90,25 @@ class Profile extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 16.h),
-                child: RichText(
-                    text: TextSpan(
-                        // recognizer: TapGestureRecognizer()
-                        //   ..onTap = () => Navigator.pushNamed(
-                        //       context, AppRoutes.homeLayoutScreenRoute),
-                        text: 'LOGOUT',
-                        style: TextStyle(
-                          fontFamily: 'Lato-Regular.ttf',
-                          color: const Color(0xff1C6E97),
-                          fontSize: 16.sp,
-                        ))),
-              )
+                  padding: EdgeInsets.only(top: 16.h),
+                  child: MyShared.getString(key: MySharedKeys.email) != ''
+                      ? RichText(
+                          text: TextSpan(
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  loginPasswordController.clear();
+                                  Navigator.pushNamedAndRemoveUntil(
+                                      context,
+                                      AppRoutes.loginScreenRoute,
+                                      (route) => false);
+                                },
+                              text: 'LOGOUT',
+                              style: TextStyle(
+                                fontFamily: 'Lato-Regular.ttf',
+                                color: const Color(0xff1C6E97),
+                                fontSize: 16.sp,
+                              )))
+                      : const SizedBox()),
             ],
           ),
         ),

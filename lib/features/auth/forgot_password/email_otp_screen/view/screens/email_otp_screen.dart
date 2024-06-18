@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import '../../../../../../core/router/routes.dart';
 import '../../../../../../core/utilities/constants.dart';
+import '../../../../../../core/utilities/controllers.dart';
 
 class EmailOTP extends StatelessWidget {
   const EmailOTP({super.key});
@@ -38,7 +39,7 @@ class EmailOTP extends StatelessWidget {
                   SizedBox(height: 8.h),
                   FittedBox(
                     child: Text(
-                      'We sent an email to example****@gmail.com',
+                      'We sent an email to ${forgetByEmailController.text}',
                       style: TextStyle(
                         fontSize: 16.sp,
                         fontFamily: 'Lato-Light.ttf',

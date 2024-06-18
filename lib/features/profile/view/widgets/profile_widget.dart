@@ -16,9 +16,9 @@ class ProfileWidget extends StatelessWidget {
           // case 0:
           //   Navigator.pushNamed(context, AppRoutes.);
           //   break;
-          // case 1:
-          //   Navigator.pushNamed(context, AppRoutes.);
-          //   break;
+          case 1:
+            Navigator.pushNamed(context, AppRoutes.inboxScreenRoute);
+            break;
           case 2:
             Navigator.pushNamed(context, AppRoutes.wishListScreenRoute);
             break;

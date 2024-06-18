@@ -14,6 +14,6 @@ bool isValidPhoneNumber(String phoneNumber) {
 }
 
 bool isValidName(String name) {
-  final RegExp regex = RegExp(r'^[a-zA-Z]{2,}$');
+  final RegExp regex = RegExp(r'^[a-zA-Z]{2,}(?: [a-zA-Z]{2,})*$');
   return regex.hasMatch(name);
 }

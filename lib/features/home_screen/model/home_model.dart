@@ -229,7 +229,7 @@ class HomeProductsModel {
   //       oldPrice: '288.00',
   //     ),
   //     HomeProductsModel(
-  //       image: 'assets/images/home/products/office/img_3.png',
+  //       image: 'assets/images/home/products/office/inbox.png',
   //       description: 'Wooden Vintage Calender Desk Wooden Office',
   //       currency: 'EGP',
   //       currentPrice: 225.0,
@@ -260,7 +260,7 @@ class HomeProductsModel {
   //       oldPrice: '90.00',
   //     ),
   //     HomeProductsModel(
-  //       image: 'assets/images/home/products/school/img_3.png',
+  //       image: 'assets/images/home/products/school/inbox.png',
   //       description: 'Creanoso teacher Reward motivational for Stickers',
   //       currency: 'EGP',
   //       currentPrice: 117.0,
@@ -291,7 +291,7 @@ class HomeProductsModel {
   //       oldPrice: '100.00',
   //     ),
   //     HomeProductsModel(
-  //       image: 'assets/images/home/products/papers/img_3.png',
+  //       image: 'assets/images/home/products/papers/inbox.png',
   //       description: 'A5 SKETCHBOOK notePAD FOR AETIST SKETCH',
   //       currency: 'EGP',
   //       currentPrice: 245.0,
@@ -322,7 +322,7 @@ class HomeProductsModel {
   //       oldPrice: '200.00',
   //     ),
   //     HomeProductsModel(
-  //       image: 'assets/images/home/products/pen/img_3.png',
+  //       image: 'assets/images/home/products/pen/inbox.png',
   //       description: 'BTS Cartoon Animal pens black ink writing pen',
   //       currency: 'EGP',
   //       currentPrice: 150.0,

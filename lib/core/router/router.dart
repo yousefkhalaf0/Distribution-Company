@@ -17,6 +17,7 @@ import '../../features/profile/view/screens/help_screen.dart';
 import '../../features/home_layout/view/screens/home_layout_screen.dart';
 import '../../features/home_screen/view/screens/home_screen.dart';
 import '../../features/on_boarding_screen/view/screens/on_boarding_screen.dart';
+import '../../features/profile/view/screens/inbox_screen.dart';
 import '../../features/profile/view/screens/profile_screen.dart';
 import '../../features/search_screen/view/screens/search_screen.dart';
 import '../../features/splash_screen/view/screens/splash_screen.dart';
@@ -47,7 +48,8 @@ Route<dynamic>? onGenerateRoutes(RouteSettings routeSettings) {
       return MaterialPageRoute(builder: (_) => const Categories());
     case AppRoutes.productsViewScreenRoute:
       final arg = routeSettings.arguments as CategoriesModel;
-      return MaterialPageRoute(builder: (_) => ProductsView(categoriesModel: arg));
+      return MaterialPageRoute(
+          builder: (_) => ProductsView(categoriesModel: arg));
     case AppRoutes.cartScreenRoute:
       return MaterialPageRoute(builder: (_) => const Cart());
     case AppRoutes.searchScreenRoute:
@@ -62,6 +64,8 @@ Route<dynamic>? onGenerateRoutes(RouteSettings routeSettings) {
       return MaterialPageRoute(builder: (_) => const EditProfile());
     case AppRoutes.wishListScreenRoute:
       return MaterialPageRoute(builder: (_) => const WishList());
+    case AppRoutes.inboxScreenRoute:
+      return MaterialPageRoute(builder: (_) => const Inbox());
   }
   return null;
 }

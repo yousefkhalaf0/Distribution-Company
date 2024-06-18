@@ -9,8 +9,14 @@ class ProductsViewCubit extends Cubit<ProductsViewState> {
   static ProductsViewCubit get(context) => BlocProvider.of(context);
 
   bool isGridView = true;
-  String dropdownValue = 'POPULARITY';
-  List<String> items = ['POPULARITY', 'LOWEST PRICE', 'HIGHEST PRICE'];
+  String dropdownValue = 'Popularity';
+  List<String> items = [
+    'Popularity',
+    'New in',
+    'Best Rating',
+    'Lowest Price',
+    'Highest Price'
+  ];
 
   void changeProductsViewStyle() {
     isGridView = !isGridView;

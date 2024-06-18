@@ -2,7 +2,9 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:graduation_project/core/database/local_database/cache.dart';
 import '../../../../core/router/routes.dart';
+import '../../../../core/utilities/enums.dart';
 import '../../../home_layout/view_model/home_layout_cubit.dart';
 import '../../model/home_model.dart';
 import '../../view_model/home_screen_cubit.dart';
@@ -30,11 +32,12 @@ class _HomeState extends State<Home> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 CircleAvatar(
-                  child: Image.asset('assets/images/home/img.png'),
+                  child: Image.asset(
+                      'assets/images/home/icons8-test-account-48.png'),
                 ),
                 SizedBox(width: 8.w),
                 Text(
-                  'Hello, Muhammed',
+                  'Hello, ${MyShared.getString(key: MySharedKeys.name)}',
                   style: TextStyle(
                       fontSize: 16.sp, fontFamily: 'Lato-Regular.ttf'),
                 )

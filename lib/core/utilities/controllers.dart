@@ -4,14 +4,14 @@ import 'package:graduation_project/core/utilities/enums.dart';
 
 var loginEmailController = TextEditingController(text: MyShared.getString(key: MySharedKeys.email));
 var loginPasswordController = TextEditingController();
-var firstNameController = TextEditingController();
+var fullNameController = TextEditingController();
 var lastNameController = TextEditingController();
 var phoneController = TextEditingController();
 var regEmailController = TextEditingController();
 var regPasswordController = TextEditingController();
 var regPasswordConfigController = TextEditingController();
-var forgetByEmailController = TextEditingController();
-var forgetByPhoneController = TextEditingController();
+var forgetByEmailController = TextEditingController(text: MyShared.getString(key: MySharedKeys.email));
+var forgetByPhoneController = TextEditingController(text: MyShared.getString(key: MySharedKeys.phoneNumber));
 var emailOTPController = TextEditingController();
 var phoneOTPController = TextEditingController();
 var newPasswordController = TextEditingController();

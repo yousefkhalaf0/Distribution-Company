@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import '../../../../../../core/router/routes.dart';
 import '../../../../../../core/utilities/constants.dart';
+import '../../../../../../core/utilities/controllers.dart';
 
 class PhoneOTP extends StatelessWidget {
   const PhoneOTP({super.key});
@@ -38,7 +39,7 @@ class PhoneOTP extends StatelessWidget {
                   SizedBox(height: 8.h),
                   FittedBox(
                     child: Text(
-                      'We sent an SMS to +20* *** *** ***',
+                      'We sent an SMS to ${forgetByPhoneController.text}',
                       style: TextStyle(
                         fontSize: 16.sp,
                         fontFamily: 'Lato-Light.ttf',

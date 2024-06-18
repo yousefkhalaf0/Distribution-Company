@@ -3,6 +3,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:graduation_project/core/database/local_database/cache.dart';
+import 'package:graduation_project/core/utilities/enums.dart';
 import '../../../../../../core/router/routes.dart';
 import '../../../../../core/utilities/constants.dart';
 import '../../../../../core/utilities/controllers.dart';
@@ -53,19 +55,19 @@ class _CreateAccState extends State<CreateAcc> {
                     ),
                     SizedBox(height: 16.h),
                     Text(
-                      'First name',
+                      'Full Name',
                       style: TextStyle(
                           fontSize: 16.sp, fontFamily: 'Lato-Regular.ttf'),
                     ),
                     SizedBox(height: 8.h),
                     TextFormField(
-                      controller: firstNameController,
-                      validator: (firstName) {
-                        if (firstName == null || firstName.isEmpty) {
-                          return 'Please enter your first name';
+                      controller: fullNameController,
+                      validator: (fullName) {
+                        if (fullName == null || fullName.isEmpty) {
+                          return 'Please enter your name';
                         }
-                        if (!isValidName(firstName)) {
-                          return 'Please enter a valid first name (at least 2 alphabetical characters)';
+                        if (!isValidName(fullName)) {
+                          return 'Please enter a valid name (at least 2 alphabetical characters)';
                         }
                         return null;
                       },
@@ -77,31 +79,31 @@ class _CreateAccState extends State<CreateAcc> {
                       ),
                     ),
                     SizedBox(height: 12.h),
-                    Text(
-                      'Last name',
-                      style: TextStyle(
-                          fontSize: 16.sp, fontFamily: 'Lato-Regular.ttf'),
-                    ),
-                    SizedBox(height: 8.h),
-                    TextFormField(
-                      controller: lastNameController,
-                      validator: (lastName) {
-                        if (lastName == null || lastName.isEmpty) {
-                          return 'Please enter your first name';
-                        }
-                        if (!isValidName(lastName)) {
-                          return 'Please enter a valid first name (at least 2 alphabetical characters)';
-                        }
-                        return null;
-                      },
-                      decoration: InputDecoration(
-                        errorStyle: TextStyle(
-                            fontSize: 10.sp, fontFamily: 'Lato-Light.ttf'),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15.r)),
-                      ),
-                    ),
-                    SizedBox(height: 12.h),
+                    // Text(
+                    //   'Last name',
+                    //   style: TextStyle(
+                    //       fontSize: 16.sp, fontFamily: 'Lato-Regular.ttf'),
+                    // ),
+                    // SizedBox(height: 8.h),
+                    // TextFormField(
+                    //   controller: lastNameController,
+                    //   validator: (lastName) {
+                    //     if (lastName == null || lastName.isEmpty) {
+                    //       return 'Please enter your first name';
+                    //     }
+                    //     if (!isValidName(lastName)) {
+                    //       return 'Please enter a valid first name (at least 2 alphabetical characters)';
+                    //     }
+                    //     return null;
+                    //   },
+                    //   decoration: InputDecoration(
+                    //     errorStyle: TextStyle(
+                    //         fontSize: 10.sp, fontFamily: 'Lato-Light.ttf'),
+                    //     border: OutlineInputBorder(
+                    //         borderRadius: BorderRadius.circular(15.r)),
+                    //   ),
+                    // ),
+                    // SizedBox(height: 12.h),
                     Text(
                       'Phone',
                       style: TextStyle(
@@ -210,7 +212,7 @@ class _CreateAccState extends State<CreateAcc> {
                             fontSize: 10.sp, fontFamily: 'Lato-Light.ttf'),
                         suffixIcon: IconButton(
                             onPressed: () {
-                              CreateAccCubit.get(context).ChangingObscureReg();
+                              CreateAccCubit.get(context).changingObscureReg();
                             },
                             icon: CreateAccCubit.get(context).isPasswordReg
                                 ? const Icon(
@@ -253,7 +255,7 @@ class _CreateAccState extends State<CreateAcc> {
                         suffixIcon: IconButton(
                             onPressed: () {
                               CreateAccCubit.get(context)
-                                  .ChangingObscureRegConfig();
+                                  .changingObscureRegConfig();
                             },
                             icon:
                                 CreateAccCubit.get(context).isPasswordRegConfig
@@ -280,7 +282,7 @@ class _CreateAccState extends State<CreateAcc> {
                               value: CreateAccCubit.get(context).isChecked,
                               onChanged: (bool? value) {
                                 CreateAccCubit.get(context)
-                                    .CheckBoxChecked(value!);
+                                    .checkBoxChecked(value!);
                               }),
                         ),
                         SizedBox(width: 8.w),
@@ -314,9 +316,17 @@ class _CreateAccState extends State<CreateAcc> {
                       ),
                       child: ElevatedButton(
                         onPressed: () {
-                          //RegEx
                           if (createAccFormKey.currentState!.validate() &&
                               CreateAccCubit.get(context).isChecked) {
+                            MyShared.putString(
+                                key: MySharedKeys.name,
+                                value: fullNameController.text);
+                            MyShared.putString(
+                                key: MySharedKeys.email,
+                                value: regEmailController.text);
+                            MyShared.putString(
+                                key: MySharedKeys.phoneNumber,
+                                value: phoneController.text);
                             Navigator.pushNamedAndRemoveUntil(
                                 context,
                                 AppRoutes.homeLayoutScreenRoute,

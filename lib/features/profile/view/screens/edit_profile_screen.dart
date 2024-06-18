@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:graduation_project/core/database/local_database/cache.dart';
+import 'package:graduation_project/core/utilities/enums.dart';
 import '../../../../core/router/routes.dart';
 import '../../../home_layout/view_model/home_layout_cubit.dart';
 import '../../view_mode/profile_cubit.dart';
@@ -63,12 +65,12 @@ class _EditProfileState extends State<EditProfile> {
             children: [
               ListTile(
                 leading: Image.asset(
-                  'assets/images/home/img.png', /*height: 38.h,width: 38.w*/
+                  'assets/images/home/icons8-test-account-48.png', /*height: 38.h,width: 38.w*/
                 ),
-                title: Text('Muhamed',
+                title: Text(MyShared.getString(key: MySharedKeys.name),
                     style: TextStyle(
                         fontSize: 16.sp, fontFamily: 'Lato-Bold.ttf')),
-                subtitle: Text('muhamedali2@gmail.com',
+                subtitle: Text(MyShared.getString(key: MySharedKeys.email),
                     style: TextStyle(
                         fontSize: 14.sp, fontFamily: 'Lato-Light.ttf')),
               ),
@@ -95,7 +97,8 @@ class _EditProfileState extends State<EditProfile> {
                                     fontSize: 16.sp,
                                     fontFamily: 'Lato-Regular.ttf')),
                           ),
-                          subtitle: Text('muhamedali2@gmail.com',
+                          subtitle: Text(
+                              MyShared.getString(key: MySharedKeys.email),
                               style: TextStyle(
                                   fontSize: 12.sp,
                                   fontFamily: 'Lato-Regular.ttf')),
@@ -104,12 +107,13 @@ class _EditProfileState extends State<EditProfile> {
                         ListTile(
                           title: Padding(
                             padding: EdgeInsets.only(bottom: 12.h),
-                            child: Text('First Name',
+                            child: Text('Full Name',
                                 style: TextStyle(
                                     fontSize: 16.sp,
                                     fontFamily: 'Lato-Regular.ttf')),
                           ),
-                          subtitle: Text('First Name',
+                          subtitle: Text(
+                              MyShared.getString(key: MySharedKeys.name),
                               style: TextStyle(
                                   fontSize: 12.sp,
                                   fontFamily: 'Lato-Regular.ttf')),
@@ -119,24 +123,24 @@ class _EditProfileState extends State<EditProfile> {
                                   'assets/images/icons/icon.svg')),
                         ),
                         const Divider(),
-                        ListTile(
-                          title: Padding(
-                            padding: EdgeInsets.only(bottom: 12.h),
-                            child: Text('Last Name',
-                                style: TextStyle(
-                                    fontSize: 16.sp,
-                                    fontFamily: 'Lato-Regular.ttf')),
-                          ),
-                          subtitle: Text('Last Name',
-                              style: TextStyle(
-                                  fontSize: 12.sp,
-                                  fontFamily: 'Lato-Regular.ttf')),
-                          trailing: IconButton(
-                              onPressed: () {},
-                              icon: SvgPicture.asset(
-                                  'assets/images/icons/icon.svg')),
-                        ),
-                        const Divider(),
+                        // ListTile(
+                        //   title: Padding(
+                        //     padding: EdgeInsets.only(bottom: 12.h),
+                        //     child: Text('Last Name',
+                        //         style: TextStyle(
+                        //             fontSize: 16.sp,
+                        //             fontFamily: 'Lato-Regular.ttf')),
+                        //   ),
+                        //   subtitle: Text('Last Name',
+                        //       style: TextStyle(
+                        //           fontSize: 12.sp,
+                        //           fontFamily: 'Lato-Regular.ttf')),
+                        //   trailing: IconButton(
+                        //       onPressed: () {},
+                        //       icon: SvgPicture.asset(
+                        //           'assets/images/icons/icon.svg')),
+                        // ),
+                        // const Divider(),
                         ListTile(
                           title: Padding(
                             padding: EdgeInsets.only(bottom: 12.h),
@@ -145,7 +149,8 @@ class _EditProfileState extends State<EditProfile> {
                                     fontSize: 16.sp,
                                     fontFamily: 'Lato-Regular.ttf')),
                           ),
-                          subtitle: Text('+20-12-********',
+                          subtitle: Text(
+                              MyShared.getString(key: MySharedKeys.phoneNumber),
                               style: TextStyle(
                                   fontSize: 12.sp,
                                   fontFamily: 'Lato-Regular.ttf')),
