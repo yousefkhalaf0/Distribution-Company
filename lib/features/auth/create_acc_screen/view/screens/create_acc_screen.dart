@@ -197,8 +197,8 @@ class _CreateAccState extends State<CreateAcc> {
                       validator: (passwordReg) {
                         if (!isValidPassword(passwordReg!) ||
                             passwordReg.isEmpty &&
-                                newPasswordController.text ==
-                                    newPasswordConfigController.text) {
+                                regPasswordController.text ==
+                                    regPasswordConfigController.text) {
                           return 'must have at least 8 letters , 1 special character (& , * , # , @)';
                         }
                         return null;
@@ -238,8 +238,8 @@ class _CreateAccState extends State<CreateAcc> {
                       validator: (passwordRegConfig) {
                         if (!isValidPassword(passwordRegConfig!) ||
                             passwordRegConfig.isEmpty &&
-                                newPasswordController.text ==
-                                    newPasswordConfigController.text) {
+                                regPasswordController.text ==
+                                    regPasswordConfigController.text) {
                           return 'Both passwords must be match';
                         }
                         return null;
@@ -325,8 +325,19 @@ class _CreateAccState extends State<CreateAcc> {
                                 key: MySharedKeys.email,
                                 value: regEmailController.text);
                             MyShared.putString(
+                                key: MySharedKeys.password,
+                                value: regPasswordConfigController.text);
+                            MyShared.putString(
                                 key: MySharedKeys.phoneNumber,
                                 value: phoneController.text);
+                            fullNameController.clear();
+                            phoneController.clear();
+                            regEmailController.clear();
+                            regPasswordController.clear();
+                            regPasswordConfigController.clear();
+                            CreateAccCubit.get(context).isPasswordReg = false;
+                            CreateAccCubit.get(context).isPasswordRegConfig = false;
+                            CreateAccCubit.get(context).checkBoxChecked(false);
                             Navigator.pushNamedAndRemoveUntil(
                                 context,
                                 AppRoutes.homeLayoutScreenRoute,

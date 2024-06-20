@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../../../core/database/local_database/cache.dart';
 import '../../../../../../core/router/routes.dart';
 import '../../../../../../core/utilities/constants.dart';
 import '../../../../../../core/utilities/controllers.dart';
+import '../../../../../../core/utilities/enums.dart';
 import '../../../../../../core/utilities/functions.dart';
 import '../../view_model/create_new_pass_cubit.dart';
 
@@ -182,6 +184,17 @@ class _CreateNewPassState extends State<CreateNewPass> {
                         child: ElevatedButton(
                           onPressed: () {
                             if (newPasswordFormKey.currentState!.validate()) {
+                              //
+                              MyShared.putString(
+                                  key: MySharedKeys.newPassword,
+                                  value: newPasswordConfigController.text);
+                              MyShared.putString(
+                                  key: MySharedKeys.password,
+                                  value: MyShared.getString(
+                                      key: MySharedKeys.newPassword));
+                              //
+                              newPasswordController.clear();
+                              newPasswordConfigController.clear();
                               Navigator.pushNamedAndRemoveUntil(context,
                                   AppRoutes.loginScreenRoute, (route) => false);
                             }

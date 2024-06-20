@@ -17,6 +17,7 @@ class AppStrings {
   static const String logInText7 = 'Password';
   static const String logInText8 = 'Please enter your password';
   static const String logInText9 = 'Password must be at least 8 characters long and contain at least one special character';
+  static const String logInText16 = 'May be the password or the email is wrong';
   static const String logInText10 = 'Enter your password';
   static const String logInText11 = 'Forget Password?';
   static const String logInText12 = 'Login';

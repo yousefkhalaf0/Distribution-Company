@@ -10,7 +10,6 @@ import 'features/auth/create_acc_screen/view_model/create_acc_cubit.dart';
 import 'features/auth/forgot_password/create_new_pass_screen/view_model/create_new_pass_cubit.dart';
 import 'features/home_layout/view_model/home_layout_cubit.dart';
 import 'features/home_screen/view_model/home_screen_cubit.dart';
-import 'features/profile/view/screens/inbox_screen.dart';
 import 'features/on_boarding_screen/view_model/on_boarding_cubit.dart';
 import 'features/products_view_screen/view_model/products_view_cubit.dart';
 import 'features/profile/view_mode/profile_cubit.dart';
@@ -73,7 +72,7 @@ class MyApp extends StatelessWidget {
           // builder: DevicePreview.appBuilder,
           debugShowCheckedModeBanner: false,
           onGenerateRoute: onGenerateRoutes,
-          // home: Inbox(),
+          // home: PendingReviews(),
         ),
       ),
     );

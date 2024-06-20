@@ -3,6 +3,7 @@ enum MySharedKeys {
   name,
   email,
   password,
+  newPassword,
   phoneNumber,
   onBoarding,
 }

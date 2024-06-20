@@ -18,7 +18,12 @@ import '../../features/home_layout/view/screens/home_layout_screen.dart';
 import '../../features/home_screen/view/screens/home_screen.dart';
 import '../../features/on_boarding_screen/view/screens/on_boarding_screen.dart';
 import '../../features/profile/view/screens/inbox_screen.dart';
+import '../../features/profile/view/screens/notification_screen.dart';
+import '../../features/profile/view/screens/orders_screen.dart';
+import '../../features/profile/view/screens/pending_reviews_screen.dart';
 import '../../features/profile/view/screens/profile_screen.dart';
+import '../../features/profile/view/screens/recently_searched_screen.dart';
+import '../../features/profile/view/screens/recently_view_screen.dart';
 import '../../features/search_screen/view/screens/search_screen.dart';
 import '../../features/splash_screen/view/screens/splash_screen.dart';
 
@@ -66,6 +71,16 @@ Route<dynamic>? onGenerateRoutes(RouteSettings routeSettings) {
       return MaterialPageRoute(builder: (_) => const WishList());
     case AppRoutes.inboxScreenRoute:
       return MaterialPageRoute(builder: (_) => const Inbox());
+    case AppRoutes.ordersScreenRoute:
+      return MaterialPageRoute(builder: (_) => const Orders());
+    case AppRoutes.recentlyViewScreenRoute:
+      return MaterialPageRoute(builder: (_) => const RecentlyView());
+    case AppRoutes.pendingReviewsScreenRoute:
+      return MaterialPageRoute(builder: (_) => const PendingReviews());
+    case AppRoutes.notificationScreenRoute:
+      return MaterialPageRoute(builder: (_) => const NotificationScreen());
+    case AppRoutes.recentlySearchedScreenRoute:
+      return MaterialPageRoute(builder: (_) => const RecentlySearched());
   }
   return null;
 }

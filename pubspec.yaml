@@ -78,6 +78,7 @@ flutter:
      - assets/images/onboarding/
      - assets/images/home/
      - assets/images/home/products/office/
+     - assets/images/home/products/office/sticky_notes/
      - assets/images/home/products/school/
      - assets/images/home/products/pen/
      - assets/images/home/products/toys_gifts/

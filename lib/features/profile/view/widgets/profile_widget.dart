@@ -13,36 +13,36 @@ class ProfileWidget extends StatelessWidget {
     return InkWell(
       onTap: () {
         switch (index) {
-          // case 0:
-          //   Navigator.pushNamed(context, AppRoutes.);
-          //   break;
+          case 0:
+            Navigator.pushNamed(context, AppRoutes.ordersScreenRoute);
+            break;
           case 1:
             Navigator.pushNamed(context, AppRoutes.inboxScreenRoute);
             break;
           case 2:
             Navigator.pushNamed(context, AppRoutes.wishListScreenRoute);
             break;
-          // case 3:
-          //   Navigator.pushNamed(context, AppRoutes.);
-          //   break;
+          case 3:
+            Navigator.pushNamed(context, AppRoutes.notificationScreenRoute);
+            break;
           case 4:
             Navigator.pushNamed(context, AppRoutes.editProfileScreenRoute);
             break;
-          // case 5:
-          //   Navigator.pushNamed(context, AppRoutes.);
-          //   break;
-          // case 6:
-          //   Navigator.pushNamed(context, AppRoutes.);
-          //   break;
+          case 5:
+            Navigator.pushNamed(context, AppRoutes.recentlyViewScreenRoute);
+            break;
+          case 6:
+            Navigator.pushNamed(context, AppRoutes.recentlySearchedScreenRoute);
+            break;
           // case 7:
           //   Navigator.pushNamed(context, AppRoutes.);
           //   break;
           // case 8:
           //   Navigator.pushNamed(context, AppRoutes.);
           //   break;
-          // case 9:
-          //   Navigator.pushNamed(context, AppRoutes.);
-          //   break;
+          case 9:
+            Navigator.pushNamed(context, AppRoutes.pendingReviewsScreenRoute);
+            break;
         }
       },
       child: ListTile(

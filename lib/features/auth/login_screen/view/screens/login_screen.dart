@@ -77,6 +77,17 @@ class _LogInState extends State<LogIn> {
                       if (!isValidEmail(email)) {
                         return AppStrings.logInText5;
                       }
+                      //
+                      if (MyShared.getString(key: MySharedKeys.email) == '') {
+                        return AppStrings.logInText16;
+                      }
+                      if (MyShared.getString(key: MySharedKeys.email) != '') {
+                        if (email !=
+                            MyShared.getString(key: MySharedKeys.email)) {
+                          return AppStrings.logInText16;
+                        }
+                      }
+                      //
                       return null;
                     },
                     decoration: InputDecoration(
@@ -110,6 +121,20 @@ class _LogInState extends State<LogIn> {
                           if (!isValidPassword(password)) {
                             return AppStrings.logInText9;
                           }
+                          //
+                          if (MyShared.getString(key: MySharedKeys.password) ==
+                              '') {
+                            return AppStrings.logInText16;
+                          }
+                          if (MyShared.getString(key: MySharedKeys.password) !=
+                              '') {
+                            if (password !=
+                                MyShared.getString(
+                                    key: MySharedKeys.password)) {
+                              return AppStrings.logInText16;
+                            }
+                          }
+                          //
                           return null;
                         },
                         obscureText:
@@ -149,8 +174,14 @@ class _LogInState extends State<LogIn> {
                       RichText(
                           text: TextSpan(
                         recognizer: TapGestureRecognizer()
-                          ..onTap = () => Navigator.pushNamed(
-                              context, AppRoutes.forgetByEmailScreenRoute),
+                          ..onTap = () {
+                            forgetByEmailController.text =
+                                MyShared.getString(key: MySharedKeys.email);
+                            forgetByPhoneController.text = MyShared.getString(
+                                key: MySharedKeys.phoneNumber);
+                            Navigator.pushNamed(
+                                context, AppRoutes.forgetByEmailScreenRoute);
+                          },
                         text: AppStrings.logInText11,
                         style: TextStyle(
                           decoration: TextDecoration.underline,
@@ -181,9 +212,9 @@ class _LogInState extends State<LogIn> {
                     child: ElevatedButton(
                       onPressed: () {
                         if (loginFormKey.currentState!.validate()) {
-                          MyShared.putString(
-                              key: MySharedKeys.email,
-                              value: loginEmailController.text);
+                          // MyShared.putString(
+                          //     key: MySharedKeys.email,
+                          //     value: loginEmailController.text);
                           Navigator.pushNamedAndRemoveUntil(
                               context,
                               AppRoutes.homeLayoutScreenRoute,
@@ -263,7 +294,8 @@ class _LogInState extends State<LogIn> {
                         ]),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 169.h),
+                    //top: 169.h as the design
+                    padding: EdgeInsets.only(top: 120.h),
                     child: Center(
                       child: RichText(
                         text: TextSpan(

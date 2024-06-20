@@ -1,6 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:graduation_project/core/utilities/enums.dart';
+import '../../../../../../core/database/local_database/cache.dart';
 import '../../../../../../core/router/routes.dart';
 import '../../../../../../core/utilities/constants.dart';
 import '../../../../../../core/utilities/controllers.dart';
@@ -61,6 +63,12 @@ class ForgetByEmail extends StatelessWidget {
                     if (!isValidEmail(email)) {
                       return 'Please enter a valid email';
                     }
+                    //
+                    if (MyShared.getString(key: MySharedKeys.email) != '' &&
+                        MyShared.getString(key: MySharedKeys.email) != email) {
+                      return 'This email is not registered';
+                    }
+                    //
                     return null;
                   },
                   style:
@@ -108,7 +116,9 @@ class ForgetByEmail extends StatelessWidget {
                   ),
                   child: ElevatedButton(
                     onPressed: () {
-                      if (forgetByEmailFormKey.currentState!.validate()) {
+                      if (forgetByEmailFormKey.currentState!.validate() &&
+                          MyShared.getString(key: MySharedKeys.email) ==
+                              forgetByEmailController.text) {
                         Navigator.pushNamedAndRemoveUntil(context,
                             AppRoutes.emailOTPScreenRoute, (route) => false);
                       }

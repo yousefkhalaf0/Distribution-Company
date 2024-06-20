@@ -19,4 +19,9 @@ class AppRoutes {
   static const String editProfileScreenRoute = 'EditProfileScreen';
   static const String wishListScreenRoute = 'WishListScreen';
   static const String inboxScreenRoute = 'InboxScreen';
+  static const String ordersScreenRoute = 'OrdersScreen';
+  static const String recentlyViewScreenRoute = 'RecentlyViewScreen';
+  static const String pendingReviewsScreenRoute = 'PendingReviewsScreen';
+  static const String notificationScreenRoute = 'NotificationScreen';
+  static const String recentlySearchedScreenRoute = 'RecentlySearchedScreen';
 }

@@ -2,9 +2,11 @@ import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../../../core/database/local_database/cache.dart';
 import '../../../../../../core/router/routes.dart';
 import '../../../../../../core/utilities/constants.dart';
 import '../../../../../../core/utilities/controllers.dart';
+import '../../../../../../core/utilities/enums.dart';
 import '../../../../../../core/utilities/functions.dart';
 
 class ForgetByPhone extends StatelessWidget {
@@ -91,6 +93,16 @@ class ForgetByPhone extends StatelessWidget {
                             if (!isValidPhoneNumber(phoneNum)) {
                               return 'Please enter a valid 11-digit phone number';
                             }
+                            //
+                            if (MyShared.getString(
+                                        key: MySharedKeys.phoneNumber) !=
+                                    '' &&
+                                MyShared.getString(
+                                        key: MySharedKeys.phoneNumber) !=
+                                    phoneNum) {
+                              return 'This number is not registered';
+                            }
+                            //
                             return null;
                           },
                           decoration: InputDecoration(
@@ -140,7 +152,9 @@ class ForgetByPhone extends StatelessWidget {
                     ),
                     child: ElevatedButton(
                       onPressed: () {
-                        if (forgetByPhoneFormKey.currentState!.validate()) {
+                        if (forgetByPhoneFormKey.currentState!.validate() &&
+                            MyShared.getString(key: MySharedKeys.phoneNumber) ==
+                                forgetByPhoneController.text) {
                           Navigator.pushNamedAndRemoveUntil(context,
                               AppRoutes.phoneOTPScreenRoute, (route) => false);
                         }

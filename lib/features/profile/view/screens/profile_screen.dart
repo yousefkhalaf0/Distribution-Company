@@ -5,6 +5,7 @@ import 'package:graduation_project/core/database/local_database/cache.dart';
 import 'package:graduation_project/core/utilities/enums.dart';
 import '../../../../core/router/routes.dart';
 import '../../../../core/utilities/controllers.dart';
+import '../../../auth/login_screen/view_model/login_cubit.dart';
 import '../../model/profile_model.dart';
 import '../widgets/profile_widget.dart';
 
@@ -97,6 +98,10 @@ class Profile extends StatelessWidget {
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
                                   loginPasswordController.clear();
+                                  LoginCubit.get(context).isPassword = false;
+                                  loginEmailController.text =
+                                      MyShared.getString(
+                                          key: MySharedKeys.email);
                                   Navigator.pushNamedAndRemoveUntil(
                                       context,
                                       AppRoutes.loginScreenRoute,
