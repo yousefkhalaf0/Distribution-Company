@@ -9,7 +9,7 @@ class ProfileModel {
     ProfileModel(title: 'Inbox', iconImage: 'assets/images/icons/img_21.png'),
     ProfileModel(title: 'Saved Items', iconImage: 'assets/images/icons/img_22.png'),
     ProfileModel(title: 'Notification', iconImage: 'assets/images/icons/img_23.png'),
-    ProfileModel(title: 'Edit Profile', iconImage: 'assets/images/icons/img_24.png'),
+    // ProfileModel(title: 'Edit Profile', iconImage: 'assets/images/icons/img_24.png'),
     ProfileModel(title: 'Recently Viewed', iconImage: 'assets/images/icons/img_25.png'),
     ProfileModel(title: 'Recently Searched', iconImage: 'assets/images/icons/img_26.png'),
     ProfileModel(title: 'Change Password', iconImage: 'assets/images/icons/img_27.png'),

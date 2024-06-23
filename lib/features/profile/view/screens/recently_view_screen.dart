@@ -33,6 +33,7 @@ class RecentlyView extends StatelessWidget {
           actions: [
             IconButton(
                 onPressed: () {
+                  Navigator.pop(context);
                   HomeLayoutCubit.get(context).changeIndex(3);
                 },
                 icon: SizedBox(
@@ -40,6 +41,7 @@ class RecentlyView extends StatelessWidget {
                     child: SvgPicture.asset('assets/images/icons/search.svg'))),
             IconButton(
               onPressed: () {
+                Navigator.pop(context);
                 HomeLayoutCubit.get(context).changeIndex(2);
               },
               icon: SizedBox(

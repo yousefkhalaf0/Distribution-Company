@@ -25,13 +25,13 @@ class ProfileWidget extends StatelessWidget {
           case 3:
             Navigator.pushNamed(context, AppRoutes.notificationScreenRoute);
             break;
+          // case 4:
+          //   Navigator.pushNamed(context, AppRoutes.editProfileScreenRoute);
+          //   break;
           case 4:
-            Navigator.pushNamed(context, AppRoutes.editProfileScreenRoute);
-            break;
-          case 5:
             Navigator.pushNamed(context, AppRoutes.recentlyViewScreenRoute);
             break;
-          case 6:
+          case 5:
             Navigator.pushNamed(context, AppRoutes.recentlySearchedScreenRoute);
             break;
           // case 7:
@@ -40,7 +40,7 @@ class ProfileWidget extends StatelessWidget {
           // case 8:
           //   Navigator.pushNamed(context, AppRoutes.);
           //   break;
-          case 9:
+          case 8:
             Navigator.pushNamed(context, AppRoutes.pendingReviewsScreenRoute);
             break;
         }
