@@ -8,10 +8,13 @@ class HomeCategoriesModel {
     HomeCategoriesModel(image: 'assets/images/home/img_2.png', title: 'School'),
     HomeCategoriesModel(image: 'assets/images/home/img_3.png', title: 'Office'),
     HomeCategoriesModel(image: 'assets/images/home/img_4.png', title: 'Papers'),
-    HomeCategoriesModel(image: 'assets/images/home/img_5.png', title: 'Colors & Art'),
+    HomeCategoriesModel(
+        image: 'assets/images/home/img_5.png', title: 'Colors & Art'),
     HomeCategoriesModel(image: 'assets/images/home/img_6.png', title: 'Pen'),
-    HomeCategoriesModel(image: 'assets/images/home/img_7.png', title: 'Toys & Gifts'),
-    HomeCategoriesModel(image: 'assets/images/home/img_8.png', title: 'Measuring'),
+    HomeCategoriesModel(
+        image: 'assets/images/home/img_7.png', title: 'Toys & Gifts'),
+    HomeCategoriesModel(
+        image: 'assets/images/home/img_8.png', title: 'Measuring'),
   ];
 }
 
@@ -42,6 +45,7 @@ class HomeProductsModel {
       currency: 'EGP',
       currentPrice: 94.99,
       oldPrice: '102.00',
+      offerPercentage: '10%',
     ),
     HomeProductsModel(
       image: 'assets/images/home/products/recommended/img_1.png',
@@ -49,6 +53,7 @@ class HomeProductsModel {
       currency: 'EGP',
       currentPrice: 1079.90,
       oldPrice: '1099.90',
+      offerPercentage: '10%',
     ),
     HomeProductsModel(
       image: 'assets/images/home/products/recommended/img_2.png',
@@ -56,6 +61,7 @@ class HomeProductsModel {
       currency: 'EGP',
       currentPrice: 210.00,
       oldPrice: '213.00',
+      offerPercentage: '10%',
     ),
     HomeProductsModel(
       image: 'assets/images/home/products/recommended/img_3.png',
@@ -63,6 +69,7 @@ class HomeProductsModel {
       currency: 'EGP',
       currentPrice: 150.00,
       oldPrice: '155.00',
+      offerPercentage: '10%',
     ),
     HomeProductsModel(
       image: 'assets/images/home/products/recommended/img_4.png',
@@ -70,6 +77,7 @@ class HomeProductsModel {
       currency: 'EGP',
       currentPrice: 20.00,
       oldPrice: '22.00',
+      offerPercentage: '10%',
     ),
     HomeProductsModel(
       image: 'assets/images/home/products/recommended/img_5.png',
@@ -77,6 +85,7 @@ class HomeProductsModel {
       currency: 'EGP',
       currentPrice: 25.00,
       oldPrice: '30.00',
+      offerPercentage: '10%',
     ),
   ];
   static List<HomeProductsModel> office = [
@@ -94,6 +103,7 @@ class HomeProductsModel {
       currency: 'EGP',
       currentPrice: 182.0,
       oldPrice: '192.00',
+      offerPercentage: '10%',
     ),
     HomeProductsModel(
       image: 'assets/images/home/products/office/img_2.png',
@@ -101,6 +111,7 @@ class HomeProductsModel {
       currency: 'EGP',
       currentPrice: 280.0,
       oldPrice: '288.00',
+      offerPercentage: '10%',
     ),
     HomeProductsModel(
       image: 'assets/images/home/products/office/img_3.png',
@@ -108,6 +119,7 @@ class HomeProductsModel {
       currency: 'EGP',
       currentPrice: 225.0,
       oldPrice: '230.00',
+      offerPercentage: '10%',
     ),
   ];
   static List<HomeProductsModel> school = [
@@ -125,6 +137,7 @@ class HomeProductsModel {
       currency: 'EGP',
       currentPrice: 118.0,
       oldPrice: '120.00',
+      offerPercentage: '10%',
     ),
     HomeProductsModel(
       image: 'assets/images/home/products/school/img_2.png',
@@ -132,6 +145,7 @@ class HomeProductsModel {
       currency: 'EGP',
       currentPrice: 85.65,
       oldPrice: '90.00',
+      offerPercentage: '10%',
     ),
     HomeProductsModel(
       image: 'assets/images/home/products/school/img_3.png',
@@ -139,6 +153,7 @@ class HomeProductsModel {
       currency: 'EGP',
       currentPrice: 117.0,
       oldPrice: '125.00',
+      offerPercentage: '10%',
     ),
   ];
   static List<HomeProductsModel> pen = [
@@ -156,6 +171,7 @@ class HomeProductsModel {
       currency: 'EGP',
       currentPrice: 333.0,
       oldPrice: '340.00',
+      offerPercentage: '10%',
     ),
     HomeProductsModel(
       image: 'assets/images/home/products/pen/img_2.png',
@@ -163,6 +179,7 @@ class HomeProductsModel {
       currency: 'EGP',
       currentPrice: 295.8,
       oldPrice: '200.00',
+      offerPercentage: '10%',
     ),
     HomeProductsModel(
       image: 'assets/images/home/products/pen/img_3.png',
@@ -170,6 +187,7 @@ class HomeProductsModel {
       currency: 'EGP',
       currentPrice: 150.0,
       oldPrice: '155.00',
+      offerPercentage: '10%',
     ),
   ];
   static List<HomeProductsModel> papers = [
@@ -187,6 +205,7 @@ class HomeProductsModel {
       currency: 'EGP',
       currentPrice: 149.0,
       oldPrice: '160.00',
+      offerPercentage: '10%',
     ),
     HomeProductsModel(
       image: 'assets/images/home/products/papers/img_2.png',
@@ -194,6 +213,7 @@ class HomeProductsModel {
       currency: 'EGP',
       currentPrice: 84.00,
       oldPrice: '100.00',
+      offerPercentage: '10%',
     ),
     HomeProductsModel(
       image: 'assets/images/home/products/papers/img_3.png',
@@ -201,6 +221,7 @@ class HomeProductsModel {
       currency: 'EGP',
       currentPrice: 245.0,
       oldPrice: '230.00',
+      offerPercentage: '10%',
     ),
   ];
 

@@ -24,4 +24,5 @@ class AppRoutes {
   static const String pendingReviewsScreenRoute = 'PendingReviewsScreen';
   static const String notificationScreenRoute = 'NotificationScreen';
   static const String recentlySearchedScreenRoute = 'RecentlySearchedScreen';
+  static const String productDetailsScreenRoute = 'ProductDetailsScreen';
 }

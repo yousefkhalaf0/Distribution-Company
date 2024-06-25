@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:graduation_project/core/database/local_database/cache.dart';
 import '../../../../core/router/routes.dart';
 import '../../../../core/utilities/enums.dart';
+import '../../../categories_screen/model/categories_model.dart';
 import '../../../home_layout/view_model/home_layout_cubit.dart';
 import '../../model/home_model.dart';
 import '../../view_model/home_screen_cubit.dart';
@@ -20,6 +21,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    // CategoriesModel? categoriesModel;
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -133,9 +135,17 @@ class _HomeState extends State<Home> {
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
                       physics: const BouncingScrollPhysics(),
-                      itemBuilder: (context, index) => HomeProductsWidget(
-                            homeProductsModel:
-                                HomeProductsModel.recommended[index],
+                      itemBuilder: (context, index) => GestureDetector(
+                            onTap: () {
+                              Navigator.pushNamed(
+                                  context, AppRoutes.productDetailsScreenRoute,
+                                  arguments:
+                                      HomeProductsModel.recommended[index]);
+                            },
+                            child: HomeProductsWidget(
+                              homeProductsModel:
+                                  HomeProductsModel.recommended[index],
+                            ),
                           ),
                       separatorBuilder: (context, index) =>
                           SizedBox(width: 8.w),
@@ -194,8 +204,16 @@ class _HomeState extends State<Home> {
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
                       physics: const BouncingScrollPhysics(),
-                      itemBuilder: (context, index) => HomeProductsWidget(
-                            homeProductsModel: HomeProductsModel.office[index],
+                      itemBuilder: (context, index) => GestureDetector(
+                            onTap: () {
+                              Navigator.pushNamed(
+                                  context, AppRoutes.productDetailsScreenRoute,
+                                  arguments: HomeProductsModel.office[index]);
+                            },
+                            child: HomeProductsWidget(
+                              homeProductsModel:
+                                  HomeProductsModel.office[index],
+                            ),
                           ),
                       separatorBuilder: (context, index) =>
                           SizedBox(width: 8.w),
@@ -254,8 +272,16 @@ class _HomeState extends State<Home> {
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
                       physics: const BouncingScrollPhysics(),
-                      itemBuilder: (context, index) => HomeProductsWidget(
-                            homeProductsModel: HomeProductsModel.school[index],
+                      itemBuilder: (context, index) => GestureDetector(
+                            onTap: () {
+                              Navigator.pushNamed(
+                                  context, AppRoutes.productDetailsScreenRoute,
+                                  arguments: HomeProductsModel.school[index]);
+                            },
+                            child: HomeProductsWidget(
+                              homeProductsModel:
+                                  HomeProductsModel.school[index],
+                            ),
                           ),
                       separatorBuilder: (context, index) =>
                           SizedBox(width: 8.w),
@@ -314,8 +340,16 @@ class _HomeState extends State<Home> {
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
                       physics: const BouncingScrollPhysics(),
-                      itemBuilder: (context, index) => HomeProductsWidget(
-                            homeProductsModel: HomeProductsModel.papers[index],
+                      itemBuilder: (context, index) => GestureDetector(
+                            onTap: () {
+                              Navigator.pushNamed(
+                                  context, AppRoutes.productDetailsScreenRoute,
+                                  arguments: HomeProductsModel.papers[index]);
+                            },
+                            child: HomeProductsWidget(
+                              homeProductsModel:
+                                  HomeProductsModel.papers[index],
+                            ),
                           ),
                       separatorBuilder: (context, index) =>
                           SizedBox(width: 8.w),
@@ -374,8 +408,15 @@ class _HomeState extends State<Home> {
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
                       physics: const BouncingScrollPhysics(),
-                      itemBuilder: (context, index) => HomeProductsWidget(
-                            homeProductsModel: HomeProductsModel.pen[index],
+                      itemBuilder: (context, index) => GestureDetector(
+                            onTap: () {
+                              Navigator.pushNamed(
+                                  context, AppRoutes.productDetailsScreenRoute,
+                                  arguments: HomeProductsModel.pen[index]);
+                            },
+                            child: HomeProductsWidget(
+                              homeProductsModel: HomeProductsModel.pen[index],
+                            ),
                           ),
                       separatorBuilder: (context, index) =>
                           SizedBox(width: 8.w),

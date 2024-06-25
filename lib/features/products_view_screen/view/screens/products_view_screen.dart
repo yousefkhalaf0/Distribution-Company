@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../../../../core/router/routes.dart';
 import '../../../categories_screen/model/categories_model.dart';
 import '../../../home_layout/view_model/home_layout_cubit.dart';
-import '../../../home_screen/model/home_model.dart';
+import '../../model/category_products_model.dart';
 import '../../view_model/products_view_cubit.dart';
 import '../widgets/products_view_styles_widget.dart';
 
 class ProductsView extends StatefulWidget {
-  final CategoriesModel categoriesModel;
-
   const ProductsView({super.key, required this.categoriesModel});
+  final CategoriesModel categoriesModel;
 
   @override
   State<ProductsView> createState() => _ProductsViewState();
@@ -20,6 +20,7 @@ class ProductsView extends StatefulWidget {
 class _ProductsViewState extends State<ProductsView> {
   @override
   Widget build(BuildContext context) {
+    // CategoriesModel? categoriesModel;
     return SafeArea(child: BlocBuilder<ProductsViewCubit, ProductsViewState>(
       builder: (context, state) {
         return Scaffold(
@@ -121,21 +122,39 @@ class _ProductsViewState extends State<ProductsView> {
                       physics: const BouncingScrollPhysics(),
                       separatorBuilder: (context, index) =>
                           SizedBox(height: 12.h),
-                      itemCount: 12,
-                      itemBuilder: (context, index) => const ListViewStyle(),
+                      itemCount: CategoryProductsModel.stickyNotes.length,
+                      itemBuilder: (context, index) => GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(
+                              context, AppRoutes.productDetailsScreenRoute,
+                              arguments:
+                                  CategoryProductsModel.stickyNotes[index]);
+                        },
+                        child: ListViewStyle(
+                            categoryProductsModel:
+                                CategoryProductsModel.stickyNotes[index]),
+                      ),
                     )
                   : GridView.builder(
                       shrinkWrap: true,
                       physics: const BouncingScrollPhysics(),
-                      itemCount: HomeProductsModel.recommended.length,
+                      itemCount: CategoryProductsModel.stickyNotes.length,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         crossAxisSpacing: 16.w,
                         mainAxisSpacing: 16.h,
                       ),
-                      itemBuilder: (context, index) => GridViewStyle(
-                          homeProductsModel:
-                              HomeProductsModel.recommended[index]))),
+                      itemBuilder: (context, index) => GestureDetector(
+                            onTap: () {
+                              Navigator.pushNamed(
+                                  context, AppRoutes.productDetailsScreenRoute,
+                                  arguments:
+                                      CategoryProductsModel.stickyNotes[index]);
+                            },
+                            child: GridViewStyle(
+                                categoryProductsModel:
+                                    CategoryProductsModel.stickyNotes[index]),
+                          ))),
         );
       },
     ));

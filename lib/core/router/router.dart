@@ -12,6 +12,9 @@ import '../../features/auth/login_screen/view/screens/login_screen.dart';
 import '../../features/cart_screen/view/screens/cart_screen.dart';
 import '../../features/categories_screen/model/categories_model.dart';
 import '../../features/categories_screen/view/screens/categories_screen.dart';
+import '../../features/home_screen/model/home_model.dart';
+import '../../features/products_view_screen/model/category_products_model.dart';
+import '../../features/products_view_screen/view/screens/product_details_screen.dart';
 import '../../features/products_view_screen/view/screens/products_view_screen.dart';
 import '../../features/profile/view/screens/help_screen.dart';
 import '../../features/home_layout/view/screens/home_layout_screen.dart';
@@ -81,6 +84,26 @@ Route<dynamic>? onGenerateRoutes(RouteSettings routeSettings) {
       return MaterialPageRoute(builder: (_) => const NotificationScreen());
     case AppRoutes.recentlySearchedScreenRoute:
       return MaterialPageRoute(builder: (_) => const RecentlySearched());
+    case AppRoutes.productDetailsScreenRoute:
+      final args = routeSettings.arguments;
+
+      CategoryProductsModel? categoryProductsModel;
+      HomeProductsModel? homeProductsModel;
+      // CategoriesModel categoriesModel;
+
+      if (args is CategoryProductsModel) {
+        categoryProductsModel = args;
+      } else if (args is HomeProductsModel) {
+        homeProductsModel = args;
+      }
+
+      return MaterialPageRoute(
+        builder: (_) => ProductDetails(
+          categoryProductsModel: categoryProductsModel,
+          homeProductsModel: homeProductsModel,
+          // categoriesModel: ,
+        ),
+      );
   }
   return null;
 }
