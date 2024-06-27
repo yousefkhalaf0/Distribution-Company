@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import '../../../../core/router/routes.dart';
 import '../../../home_layout/view_model/home_layout_cubit.dart';
 
 class RecentlyView extends StatelessWidget {
@@ -91,7 +92,7 @@ class RecentlyView extends StatelessWidget {
                                           width: 0.2.w),
                                     ),
                                     child: Image.asset(
-                                      'assets/images/home/products/office/sticky_notes/img.png',
+                                      'assets/images/home/products/office/sticky_notes/img_6.png',
                                       width: 105.w,
                                       height: 89.h,
                                     )),
@@ -104,7 +105,7 @@ class RecentlyView extends StatelessWidget {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Cute Animal Sticky Notes Pads, Cat Cartoon Kawaii',
+                                            '400 pcs Page Markers Sticky index',
                                             textAlign: TextAlign.left,
                                             maxLines: 2,
                                             style: TextStyle(
@@ -117,7 +118,7 @@ class RecentlyView extends StatelessWidget {
                                             height: 4.h,
                                           ),
                                           Text(
-                                            'EGP 109.00',
+                                            'EGP 399.00',
                                             style: TextStyle(
                                                 fontFamily: 'Lato',
                                                 fontSize: 12.sp,
@@ -128,7 +129,7 @@ class RecentlyView extends StatelessWidget {
                                             height: 4.h,
                                           ),
                                           Text(
-                                            'EGP 129.00',
+                                            'EGP 405.00',
                                             style: TextStyle(
                                                 decoration:
                                                     TextDecoration.lineThrough,
@@ -168,7 +169,10 @@ class RecentlyView extends StatelessWidget {
                                     width: 115.w,
                                     height: 49.h,
                                     child: TextButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.pushNamed(context,
+                                              AppRoutes.checkoutScreenRoute);
+                                        },
                                         child: Text(
                                           'BUY NOW',
                                           style: TextStyle(

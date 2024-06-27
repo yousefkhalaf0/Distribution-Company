@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/router/routes.dart';
 import '../../model/home_model.dart';
 
 class HomeCategoriesWidget extends StatelessWidget {
@@ -90,7 +91,9 @@ class HomeProductsWidget extends StatelessWidget {
                                 shape: BoxShape.circle,
                                 color: Colors.white),
                             child: IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(context, AppRoutes.checkoutScreenRoute);
+                                },
                                 icon: Image.asset(
                                   'assets/images/icons/img_7.png',
                                 )),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import '../../../../core/router/routes.dart';
 import '../../model/category_products_model.dart';
 
 class GridViewStyle extends StatelessWidget {
@@ -110,7 +111,9 @@ class GridViewStyle extends StatelessWidget {
                   borderRadius: BorderRadius.circular(5.r),
                 ),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, AppRoutes.checkoutScreenRoute);
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
                     shadowColor: Colors.transparent,
@@ -258,7 +261,10 @@ class ListViewStyle extends StatelessWidget {
                         borderRadius: BorderRadius.circular(5.r),
                       ),
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(
+                              context, AppRoutes.checkoutScreenRoute);
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.transparent,
                           shadowColor: Colors.transparent,

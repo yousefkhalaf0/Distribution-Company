@@ -80,7 +80,11 @@ class Cart extends StatelessWidget {
                   separatorBuilder: (context, index) => SizedBox(height: 12.h),
                   itemCount: 1,
                   itemBuilder: (context, index) => InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      //
+                      Navigator.pushNamed(context, AppRoutes.checkoutScreenRoute);
+                      //
+                    },
                     child: Container(
                       height: 136.h,
                       decoration: BoxDecoration(
@@ -104,7 +108,7 @@ class Cart extends StatelessWidget {
                                       image: const DecorationImage(
                                           // fit: BoxFit.fill,
                                           image: AssetImage(
-                                              'assets/images/home/products/office/img.png'))),
+                                              'assets/images/home/products/office/sticky_notes/img_6.png'))),
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
@@ -138,7 +142,7 @@ class Cart extends StatelessWidget {
                                     ),
                                     SizedBox(height: 8.h),
                                     Text(
-                                      '400 pcs Page Markers Sticky index..',
+                                      '400 pcs Page Markers Sticky index',
                                       style: TextStyle(
                                           fontFamily: 'Lato-Regular.ttf',
                                           fontSize: 10.sp),

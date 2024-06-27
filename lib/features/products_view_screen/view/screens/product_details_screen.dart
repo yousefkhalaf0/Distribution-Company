@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/router/routes.dart';
 import '../../../home_screen/model/home_model.dart';
 import '../../model/category_products_model.dart';
 
@@ -258,7 +259,9 @@ class _ProductDetailsState extends State<ProductDetails> {
             width: 322.w,
             // height: 56.h,
             child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, AppRoutes.checkoutScreenRoute);
+                },
                 child: Text(
                   'ADD TO CART',
                   style: TextStyle(

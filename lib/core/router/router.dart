@@ -10,6 +10,7 @@ import '../../features/auth/forgot_password/forget_by_phone_screen/view/screens/
 import '../../features/auth/forgot_password/phone_otp_screen/view/screens/phone_otp_screen.dart';
 import '../../features/auth/login_screen/view/screens/login_screen.dart';
 import '../../features/cart_screen/view/screens/cart_screen.dart';
+import '../../features/cart_screen/view/screens/checkout_screen.dart';
 import '../../features/categories_screen/model/categories_model.dart';
 import '../../features/categories_screen/view/screens/categories_screen.dart';
 import '../../features/home_screen/model/home_model.dart';
@@ -26,7 +27,7 @@ import '../../features/profile/view/screens/orders_screen.dart';
 import '../../features/profile/view/screens/pending_reviews_screen.dart';
 import '../../features/profile/view/screens/profile_screen.dart';
 import '../../features/profile/view/screens/recently_searched_screen.dart';
-import '../../features/profile/view/screens/recently_view_screen.dart';
+import '../../features/profile/view/screens/recently_viewed_screen.dart';
 import '../../features/search_screen/view/screens/search_screen.dart';
 import '../../features/splash_screen/view/screens/splash_screen.dart';
 
@@ -104,6 +105,8 @@ Route<dynamic>? onGenerateRoutes(RouteSettings routeSettings) {
           // categoriesModel: ,
         ),
       );
+    case AppRoutes.checkoutScreenRoute:
+      return MaterialPageRoute(builder: (_) => const Checkout());
   }
   return null;
 }
