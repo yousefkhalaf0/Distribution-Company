@@ -646,7 +646,7 @@ class Checkout extends StatelessWidget {
       ),
       bottomNavigationBar: InkWell(
         onTap: () {
-
+          Navigator.pushNamed(context, AppRoutes.placeOrderScreenRoute);
         },
         child: Container(
           decoration: BoxDecoration(

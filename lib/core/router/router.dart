@@ -11,6 +11,7 @@ import '../../features/auth/forgot_password/phone_otp_screen/view/screens/phone_
 import '../../features/auth/login_screen/view/screens/login_screen.dart';
 import '../../features/cart_screen/view/screens/cart_screen.dart';
 import '../../features/cart_screen/view/screens/checkout_screen.dart';
+import '../../features/cart_screen/view/screens/place_order_screen.dart';
 import '../../features/categories_screen/model/categories_model.dart';
 import '../../features/categories_screen/view/screens/categories_screen.dart';
 import '../../features/home_screen/model/home_model.dart';
@@ -107,6 +108,8 @@ Route<dynamic>? onGenerateRoutes(RouteSettings routeSettings) {
       );
     case AppRoutes.checkoutScreenRoute:
       return MaterialPageRoute(builder: (_) => const Checkout());
+    case AppRoutes.placeOrderScreenRoute:
+      return MaterialPageRoute(builder: (_) => const PlaceOrder());
   }
   return null;
 }

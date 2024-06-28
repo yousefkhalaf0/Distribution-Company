@@ -26,4 +26,5 @@ class AppRoutes {
   static const String recentlySearchedScreenRoute = 'RecentlySearchedScreen';
   static const String productDetailsScreenRoute = 'ProductDetailsScreen';
   static const String checkoutScreenRoute = 'CheckoutScreen';
+  static const String placeOrderScreenRoute = 'PlaceOrderScreen';
 }
