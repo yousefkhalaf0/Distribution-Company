@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/5cd00938-9b86-4407-9a7d-41a7037190c8)# Library E-Commerce App
+# Library E-Commerce App
 
 ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)
 ![Dart](https://img.shields.io/badge/Dart-%230175C2.svg?style=for-the-badge&logo=Dart&logoColor=white)
