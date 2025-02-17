@@ -30,7 +30,7 @@ The app achieved an **Excellent** grade, showcasing its robust architecture, use
 <!-- Add your screenshots here -->
 | Splash Screen | Onboarding | Authentication | Categories |
 |---------------|------------|----------------|------------|
-| ![Splash](screenshots/splash.png) | ![image](https://github.com/user-attachments/assets/eeee916d-f1c7-4d4c-a1f8-85945f766f30) | ![image](https://github.com/user-attachments/assets/eb51f352-d307-4104-9950-446385df8461) | ![image](https://github.com/user-attachments/assets/0330f7fd-77ad-47c1-98d7-bcf2fbd11bf8) |
+| ![image](https://github.com/user-attachments/assets/bb7e49be-0098-434a-bc91-8ce0676a7475) | ![image](https://github.com/user-attachments/assets/eeee916d-f1c7-4d4c-a1f8-85945f766f30) | ![image](https://github.com/user-attachments/assets/eb51f352-d307-4104-9950-446385df8461) | ![image](https://github.com/user-attachments/assets/0330f7fd-77ad-47c1-98d7-bcf2fbd11bf8) |
 
 | Cart | Product Details | Profile |
 |------|-----------------|---------|
@@ -78,8 +78,8 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/library-ecommerce-app.git
-   cd library-ecommerce-app
+   git clone https://github.com/yousefkhalaf0/Distribution-Company.git
+   cd Distribution-Company
    ```
 
 2. **Install dependencies**:
